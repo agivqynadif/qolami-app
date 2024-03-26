@@ -18,4 +18,16 @@
         android:layout_marginTop="0dp"
         app:defaultNavHost="true"
         app:navGraph="@navigation/navigation_item" />
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomnav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="2dp"
+        android:background="@color/warna_hijau_tua"
+        app:itemIconTint="@color/bottom_nav_item_color"
+        app:labelVisibilityMode="unlabeled"
+        app:itemTextColor="@color/bottom_nav_item_color"
+        app:itemBackground="@drawable/background_icon_bot_nav"
+        app:menu="@menu/bottom_nav_menu" />
 </RelativeLayout>

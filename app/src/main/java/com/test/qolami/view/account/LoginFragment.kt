@@ -29,6 +29,9 @@ class LoginFragment : Fragment() {
         binding.lupaPassword.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_resetPasswordFragment)
         }
+        binding.buttonMasuk.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+        }
     }
 
 
