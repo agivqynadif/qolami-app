@@ -29,7 +29,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/text_pelajaran"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat_bold"
@@ -55,6 +55,7 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
 
         <ImageView
+            android:id="@+id/logo_detail"
             android:layout_width="231dp"
             android:layout_height="265dp"
             android:src="@drawable/img_hijaiyah"
@@ -104,7 +105,7 @@
             app:layout_constraintTop_toBottomOf="@+id/text_pelajaran_detail" />
 
         <TextView
-            android:id="@+id/textView8"
+            android:id="@+id/textView_penjelasan"
             android:layout_width="189dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
@@ -124,10 +125,11 @@
             android:layout_height="45dp"
             android:backgroundTint="@color/white"
             android:text="Lanjutkan"
-            app:cornerRadius="10dp"
             android:textColor="@color/warna_hijau_tua"
+            app:cornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+            app:layout_constraintTop_toBottomOf="@+id/textView_penjelasan"
+            tools:ignore="TouchTargetSizeCheck" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
