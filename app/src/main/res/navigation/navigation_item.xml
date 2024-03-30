@@ -42,7 +42,11 @@
         android:id="@+id/homeFragment"
         android:name="com.test.qolami.view.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_pelajaranFragment"
+            app:destination="@id/pelajaranFragment" />
+    </fragment>
     <fragment
         android:id="@+id/onBoardingMangerFragment"
         android:name="com.test.qolami.view.splashandomboarding.OnBoardingMangerFragment"
@@ -69,4 +73,27 @@
             app:popUpTo="@id/splashScreenFragment"
             app:popUpToInclusive="true" />
     </fragment>
+    <fragment
+        android:id="@+id/pelajaranFragment"
+        android:name="com.test.qolami.view.pelajaran.PelajaranFragment"
+        android:label="fragment_pelajaran"
+        tools:layout="@layout/fragment_pelajaran" >
+        <action
+            android:id="@+id/action_pelajaranFragment_to_pelajaranHurufFragment"
+            app:destination="@id/pelajaranHurufFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pelajaranHurufFragment"
+        android:name="com.test.qolami.view.pelajaran.PelajaranHurufFragment"
+        android:label="fragment_pelajaran_huruf"
+        tools:layout="@layout/fragment_pelajaran_huruf" >
+        <action
+            android:id="@+id/action_pelajaranHurufFragment_to_detailPelajaranFragment"
+            app:destination="@id/detailPelajaranFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailPelajaranFragment"
+        android:name="com.test.qolami.view.pelajaran.DetailPelajaranFragment"
+        android:label="fragment_detail_pelajaran"
+        tools:layout="@layout/fragment_detail_pelajaran" />
 </navigation>

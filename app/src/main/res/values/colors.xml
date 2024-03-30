@@ -9,5 +9,6 @@
     <color name="white">#FFFFFFFF</color>
     <color name="warna_bg">#FFF6D9</color>
     <color name="warna_hijau_tua">#458200</color>
+    <color name="warna_hijau_muda">#C2EF90</color>
 
 </resources>
