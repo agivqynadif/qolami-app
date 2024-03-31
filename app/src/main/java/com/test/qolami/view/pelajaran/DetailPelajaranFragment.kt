@@ -7,7 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
+import com.test.qolami.R
 import com.test.qolami.databinding.FragmentDetailPelajaranBinding
 import com.test.qolami.viewnodel.PelajaranHurufViewModel
 import kotlin.math.log
@@ -31,6 +33,9 @@ class DetailPelajaranFragment : Fragment() {
         pelajaranHurufViewModel.getDataDetail()
         pelajaranHurufViewModel.getDataHurufDetail.observe(this){
             getDetail()
+        }
+        binding.buttonLanjutkan.setOnClickListener {
+            findNavController().navigate(R.id.action_detailPelajaranFragment_to_pelajaran1Fragment)
         }
     }
     private fun getDetail(){

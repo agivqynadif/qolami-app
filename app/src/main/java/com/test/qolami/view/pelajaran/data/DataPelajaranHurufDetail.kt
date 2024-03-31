@@ -1,4 +1,4 @@
-package com.test.qolami.view.pelajaran
+package com.test.qolami.view.pelajaran.data
 
 data class DataPelajaranHurufDetail(
     var pelajaran: String,

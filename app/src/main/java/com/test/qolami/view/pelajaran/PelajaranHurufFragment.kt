@@ -7,9 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.test.qolami.R
 import com.test.qolami.databinding.FragmentPelajaranHurufBinding
 import com.test.qolami.view.adapter.PelajaranHurufAdapter
+import com.test.qolami.view.pelajaran.data.DataPelajaranHuruf
 import com.test.qolami.viewnodel.PelajaranHurufViewModel
 
 

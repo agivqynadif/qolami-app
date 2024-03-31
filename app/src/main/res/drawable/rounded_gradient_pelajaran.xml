@@ -5,12 +5,12 @@
             <solid android:color="@color/warna_hijau_tua" /> <!-- Warna untuk bagian atas -->
         </shape>
     </item>
-    <item android:top="150dp" android:bottom="0dp"> <!-- Ganti nilai top sesuai keinginan -->
+    <item android:top="100dp" android:bottom="0dp"> <!-- Ganti nilai top sesuai keinginan -->
         <shape android:shape="rectangle">
             <solid android:color="@color/warna_bg" />
             <corners
-            android:topRightRadius="40dp"
-            android:topLeftRadius="40dp">
+                android:topRightRadius="25dp"
+                android:topLeftRadius="25dp">
             </corners> <!-- Warna untuk bagian bawah -->
         </shape>
     </item>

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation_item"
-    app:startDestination="@id/splashScreenFragment">
+    app:startDestination="@id/detailPelajaranFragment">
 
     <fragment
         android:id="@+id/loginFragment"
@@ -95,5 +95,14 @@
         android:id="@+id/detailPelajaranFragment"
         android:name="com.test.qolami.view.pelajaran.DetailPelajaranFragment"
         android:label="fragment_detail_pelajaran"
-        tools:layout="@layout/fragment_detail_pelajaran" />
+        tools:layout="@layout/fragment_detail_pelajaran" >
+        <action
+            android:id="@+id/action_detailPelajaranFragment_to_pelajaran1Fragment"
+            app:destination="@id/pelajaran1Fragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/pelajaran1Fragment"
+        android:name="com.test.qolami.view.pelajaran.Pelajaran1Fragment"
+        android:label="fragment_pelajaran1"
+        tools:layout="@layout/fragment_pelajaran1" />
 </navigation>
