@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.test.qolami.databinding.FragmentPelajaran1Binding
 import com.test.qolami.view.adapter.PelajaranHuruf1Adapter
 import com.test.qolami.view.adapter.PelajaranHuruf2Adapter
@@ -59,6 +60,7 @@ class Pelajaran1Fragment : Fragment() {
         pelajaranHurufViewModel = ViewModelProvider(this)[PelajaranHurufViewModel::class.java]
         pelajaranHuruf1Adapter = PelajaranHuruf1Adapter(ArrayList())
         pelajaranHurufViewModel.getPelajaran1()
+
         binding.rcCon.layoutManager = GridLayoutManager(context, 5)
         binding.rcCon.adapter = pelajaranHuruf1Adapter
         pelajaranHurufViewModel.getDataPelajaran1.observe(viewLifecycleOwner) {
@@ -69,6 +71,7 @@ class Pelajaran1Fragment : Fragment() {
         pelajaranHurufViewModel = ViewModelProvider(this)[PelajaranHurufViewModel::class.java]
         pelajaranHuruf2Adapter = PelajaranHuruf2Adapter(ArrayList())
         pelajaranHurufViewModel.getPelajaran2()
+
         binding.rcCon.layoutManager = GridLayoutManager(context, 5)
         binding.rcCon.adapter = pelajaranHuruf2Adapter
         pelajaranHurufViewModel.getDataPelajaran2.observe(viewLifecycleOwner){
