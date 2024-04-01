@@ -33,7 +33,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat_bold"
-            android:text="Pelajaran 1"
+            android:text="Test"
             android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -58,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="@font/nunito_extrabold"
-                android:text="Huruf Hijaiyah"
+                android:text="Test"
                 android:textColor="@color/warna_hijau_tua"
                 android:textSize="16sp" />
         </androidx.cardview.widget.CardView>

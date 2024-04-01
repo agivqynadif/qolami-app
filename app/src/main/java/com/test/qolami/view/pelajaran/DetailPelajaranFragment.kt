@@ -33,10 +33,17 @@ class DetailPelajaranFragment : Fragment() {
         pelajaranHurufViewModel.getDataDetail()
         pelajaranHurufViewModel.getDataHurufDetail.observe(this){
             getDetail()
+            val pelajaran = binding.textPelajaran.text
+            val judul = binding.textHurufDetail.text
+            val bundle = Bundle()
+            bundle.putString("pelajaranAtas", pelajaran.toString())
+            bundle.putString("judul", judul.toString())
+            binding.buttonLanjutkan.setOnClickListener {
+                findNavController().navigate(R.id.action_detailPelajaranFragment_to_pelajaran1Fragment, bundle)
+            }
         }
-        binding.buttonLanjutkan.setOnClickListener {
-            findNavController().navigate(R.id.action_detailPelajaranFragment_to_pelajaran1Fragment)
-        }
+
+
     }
     private fun getDetail(){
         val args = this.arguments
@@ -50,8 +57,10 @@ class DetailPelajaranFragment : Fragment() {
                 binding.textPelajaranDetail.text = detail[i].judulPelajaran
                 binding.textHurufDetail.text = detail[i].namaPelajaran
                 binding.textViewPenjelasan.text = detail[i].penjelasanPelajaran
+
             }
         }
+
 
 
 

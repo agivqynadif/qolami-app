@@ -1,6 +1,5 @@
 package com.test.qolami.view.adapter
 
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -9,8 +8,8 @@ import com.test.qolami.R
 import com.test.qolami.databinding.DataPelajaran1Binding
 import com.test.qolami.view.pelajaran.data.DataMenuPelajaran1Huruf
 
-class PelajaranHuruf1Adapter( var listHurufHijaiyah: ArrayList<DataMenuPelajaran1Huruf>): RecyclerView.Adapter<PelajaranHuruf1Adapter.ViewHolder>() {
-    class ViewHolder(var binding: DataPelajaran1Binding):RecyclerView.ViewHolder(binding.root) {
+class PelajaranHuruf2Adapter( var listHurufFathah: ArrayList<DataMenuPelajaran1Huruf>): RecyclerView.Adapter<PelajaranHuruf2Adapter.ViewHolder>() {
+    class ViewHolder (var binding: DataPelajaran1Binding):RecyclerView.ViewHolder(binding.root){
 
     }
 
@@ -20,11 +19,11 @@ class PelajaranHuruf1Adapter( var listHurufHijaiyah: ArrayList<DataMenuPelajaran
     }
 
     override fun getItemCount(): Int {
-        return listHurufHijaiyah.size
+        return listHurufFathah.size
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        Glide.with(holder.itemView).load(listHurufHijaiyah[position].gambarPelajaran).into(holder.binding.imageView2)
+        Glide.with(holder.itemView).load(listHurufFathah[position].gambarPelajaran).into(holder.binding.imageView2)
         var grid = position / 5
         val color = when(grid % 6){
             0 -> R.color.choklat
