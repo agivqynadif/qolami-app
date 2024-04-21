@@ -9,9 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.test.qolami.R
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 
-
+@AndroidEntryPoint
 class SplashScreenFragment : Fragment() {
 
 

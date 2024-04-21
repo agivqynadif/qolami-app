@@ -8,9 +8,10 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.test.qolami.R
 import com.test.qolami.databinding.FragmentLupaPasswordBinding
+import dagger.hilt.android.AndroidEntryPoint
 
 
-
+@AndroidEntryPoint
 class LupaPasswordFragment : Fragment() {
     private lateinit var binding: FragmentLupaPasswordBinding
 

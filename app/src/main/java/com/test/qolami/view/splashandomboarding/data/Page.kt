@@ -1,4 +1,4 @@
-package com.test.qolami.view.splashandomboarding
+package com.test.qolami.view.splashandomboarding.data
 
 data class page (
     val logo: Int,

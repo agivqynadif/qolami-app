@@ -4,7 +4,7 @@ import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.test.qolami.view.splashandomboarding.OnBoarding1Fragment
 import com.test.qolami.view.splashandomboarding.OnBoardingMangerFragment
-import com.test.qolami.view.splashandomboarding.page
+import com.test.qolami.view.splashandomboarding.data.page
 
 class OnBoardingPagerAdapter(fragmentActivity: OnBoardingMangerFragment, private val pagerList: ArrayList<page>) : FragmentStateAdapter(fragmentActivity) {
     override fun getItemCount(): Int {

@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.view.plusAssign
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
@@ -14,8 +13,10 @@ import com.google.android.material.tabs.TabLayoutMediator
 import com.test.qolami.R
 import com.test.qolami.databinding.FragmentOnBoardingMangerBinding
 import com.test.qolami.view.adapter.OnBoardingPagerAdapter
+import com.test.qolami.view.splashandomboarding.data.page
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class OnBoardingMangerFragment : Fragment() {
     private val pagerList = arrayListOf(
         page(R.drawable.logo_qolami,"QOLAMI","Menggunakan Metode!", R.drawable.bg_onboarding1),

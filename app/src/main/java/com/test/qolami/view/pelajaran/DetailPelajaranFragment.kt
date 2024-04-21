@@ -12,9 +12,10 @@ import com.bumptech.glide.Glide
 import com.test.qolami.R
 import com.test.qolami.databinding.FragmentDetailPelajaranBinding
 import com.test.qolami.viewnodel.PelajaranHurufViewModel
+import dagger.hilt.android.AndroidEntryPoint
 import kotlin.math.log
 
-
+@AndroidEntryPoint
 class DetailPelajaranFragment : Fragment() {
     lateinit var binding : FragmentDetailPelajaranBinding
     private lateinit var pelajaranHurufViewModel: PelajaranHurufViewModel

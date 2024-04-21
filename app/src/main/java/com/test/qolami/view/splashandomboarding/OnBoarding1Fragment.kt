@@ -5,9 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.test.qolami.R
 import com.test.qolami.databinding.FragmentOnBoarding1Binding
+import com.test.qolami.view.splashandomboarding.data.page
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 
 class OnBoarding1Fragment(val page: page) : Fragment() {
     private lateinit var binding: FragmentOnBoarding1Binding

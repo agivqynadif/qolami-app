@@ -11,8 +11,9 @@ import com.test.qolami.databinding.FragmentPelajaranHurufBinding
 import com.test.qolami.view.adapter.PelajaranHurufAdapter
 import com.test.qolami.view.pelajaran.data.DataPelajaranHuruf
 import com.test.qolami.viewnodel.PelajaranHurufViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class PelajaranHurufFragment : Fragment() {
     private lateinit var binding: FragmentPelajaranHurufBinding
     private lateinit var pelajaranHurufViewModel: PelajaranHurufViewModel
