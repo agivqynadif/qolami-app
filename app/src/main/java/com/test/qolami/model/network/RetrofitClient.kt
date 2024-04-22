@@ -15,7 +15,7 @@ import com.test.qolami.BuildConfig
 @Module
 @InstallIn(SingletonComponent::class)
 object RetrofitClient {
-    private const val  BASE_URL =BuildConfig.BASE_URL
+    private const val  BASE_URL = BuildConfig.BASE_URL
 
     private val logging : HttpLoggingInterceptor
         get() {

@@ -28,6 +28,9 @@ class HomeFragment : Fragment() {
         binding.buttonPelajaran.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_pelajaranFragment)
         }
+        binding.buttonLatihan.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_loginFragment)
+        }
     }
 
 
