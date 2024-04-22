@@ -1,4 +1,4 @@
-package com.test.qolami.view.account
+package com.test.qolami.view.user
 
 import android.content.Context
 import android.content.SharedPreferences

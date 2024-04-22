@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/warna_hijau_tua"
-    tools:context=".view.account.RegisterFragment">
+    tools:context=".view.user.RegisterFragment">
 
     <ImageView
         android:id="@+id/Tombol_Back"

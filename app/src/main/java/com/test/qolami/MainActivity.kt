@@ -8,7 +8,6 @@ import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.test.qolami.R
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -29,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
             when (destination.id) {
                 R.id.loginFragment, R.id.registerFragment,
-                R.id.resetPasswordFragment, R.id.onBoardingMangerFragment,
+                R.id.lupaPasswordFragment, R.id.onBoardingMangerFragment,
                 R.id.splashScreenFragment, R.id.pelajaranHurufFragment -> {
                     bottomNavView.visibility = View.GONE
                 }
