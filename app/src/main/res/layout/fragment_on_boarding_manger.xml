@@ -29,7 +29,7 @@
         android:layout_alignTop="@+id/tabLayout"
         android:layout_marginTop="40dp"
         android:background="@drawable/rounded_bg_buttom"
-        android:src="@drawable/baseline_navigate_next_24"
+        android:src="@drawable/baseline_navigate_next_24_putih"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 

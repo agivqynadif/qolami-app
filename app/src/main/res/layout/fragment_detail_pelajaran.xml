@@ -21,10 +21,9 @@
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="28dp"
-            android:layout_height="28dp"
-            android:background="@drawable/ring_back_pelajaran"
-            android:src="@drawable/baseline_arrow_back_ios_new_24"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_back"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -96,8 +95,8 @@
             android:id="@+id/text_huruf_detail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Huruf Hijaiyah"
             android:fontFamily="@font/nunito_semibold"
+            android:text="Huruf Hijaiyah"
             android:textColor="@color/black"
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -109,12 +108,12 @@
             android:layout_width="189dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
+            android:fontFamily="@font/nunito_semibold"
             android:gravity="center_horizontal"
             android:text="Mulai dari Huruf Hijaiyah dan  pengenalan sistem penulisan dalam bahasa Arab"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:textSize="14sp"
-            android:fontFamily="@font/nunito_semibold"
             android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_huruf_detail" />
 
@@ -124,6 +123,7 @@
             android:layout_width="225dp"
             android:layout_height="45dp"
             android:backgroundTint="@color/white"
+            android:fontFamily="@font/poppins_bold"
             android:text="Lanjutkan"
             android:textColor="@color/warna_hijau_tua"
             app:cornerRadius="10dp"
