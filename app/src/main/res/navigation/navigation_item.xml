@@ -7,15 +7,12 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.test.qolami.view.account.LoginFragment"
+        android:name="com.test.qolami.view.user.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
-        <action
-            android:id="@+id/action_loginFragment_to_resetPasswordFragment"
-            app:destination="@id/resetPasswordFragment" />
         <action
             android:id="@+id/action_loginFragment_to_homeFragment"
             app:destination="@id/homeFragment"
@@ -24,10 +21,13 @@
         <action
             android:id="@+id/action_loginFragment_self"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_lupaPasswordFragment"
+            app:destination="@id/lupaPasswordFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.test.qolami.view.account.RegisterFragment"
+        android:name="com.test.qolami.view.user.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" >
         <action
@@ -35,17 +35,17 @@
             app:destination="@id/loginFragment" />
     </fragment>
     <fragment
-        android:id="@+id/resetPasswordFragment"
-        android:name="com.test.qolami.view.account.LupaPasswordFragment"
-        android:label="fragment_reset_password"
-        tools:layout="@layout/fragment_lupa_password" >
+        android:id="@+id/lupaPasswordFragment"
+        android:name="com.test.qolami.view.user.LupaPasswordFragment"
+        android:label="fragment_lupa_password"
+        tools:layout="@layout/fragment_lupa_password">
         <action
-            android:id="@+id/action_resetPasswordFragment_to_loginFragment"
+            android:id="@+id/action_lupaPasswordFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.test.qolami.view.HomeFragment"
+        android:name="com.test.qolami.view.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -57,6 +57,9 @@
         <action
             android:id="@+id/action_homeFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_akunFragment2"
+            app:destination="@id/akunFragment2" />
     </fragment>
     <fragment
         android:id="@+id/onBoardingMangerFragment"
@@ -116,4 +119,26 @@
         android:name="com.test.qolami.view.pelajaran.Pelajaran1Fragment"
         android:label="fragment_pelajaran1"
         tools:layout="@layout/fragment_pelajaran1" />
+    <fragment
+        android:id="@+id/akunFragment2"
+        android:name="com.test.qolami.view.account.AkunFragment"
+        android:label="fragment_akun"
+        tools:layout="@layout/fragment_akun" >
+        <action
+            android:id="@+id/action_akunFragment2_to_fragmentInfo"
+            app:destination="@id/fragmentInfo" />
+        <action
+            android:id="@+id/action_akunFragment2_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentInfo"
+        android:name="com.test.qolami.view.info.FragmentInfo"
+        android:label="fragment_info"
+        tools:layout="@layout/fragment_info" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.test.qolami.view.account.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>

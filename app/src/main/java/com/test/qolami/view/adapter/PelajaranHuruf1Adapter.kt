@@ -36,5 +36,6 @@ class PelajaranHuruf1Adapter( var listHurufHijaiyah: ArrayList<DataMenuPelajaran
         }
         val test = holder.itemView.context.resources.getColor(color, null)
         holder.binding.cv.setCardBackgroundColor(test)
+        holder.binding.imageView2.setOnClickListener {  }
     }
 }

@@ -47,7 +47,6 @@ class LupaPasswordFragment : Fragment() {
             userViewModel.putLupaPassword(username, newPassword, confrimPassword)
             userViewModel.dataPutLupaPassword.observe(viewLifecycleOwner){
                 if(it != null){
-
                     findNavController().navigate(R.id.action_lupaPasswordFragment_to_loginFragment)
                     Toast.makeText(context, "Ganti Password Berhasil!", Toast.LENGTH_SHORT).show()
                     testBoolean = true

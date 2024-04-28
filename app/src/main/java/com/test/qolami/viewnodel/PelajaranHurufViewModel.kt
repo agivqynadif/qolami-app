@@ -102,7 +102,7 @@ class PelajaranHurufViewModel:ViewModel() {
         DataMenuPelajaran1Huruf(25, R.drawable.hfp_nun_fathah_putih),
         DataMenuPelajaran1Huruf(26, R.drawable.hfp_waw_fathah_putih),
         DataMenuPelajaran1Huruf(27, R.drawable.hfp_hah_fathah_putih),
-        DataMenuPelajaran1Huruf(28, R.drawable.hfp_ya_fathah_putih),
+        DataMenuPelajaran1Huruf(28, R.drawable.hfp_ya_fathah_putih)
     )
     val getDataPelajaran2 : MutableLiveData<List<DataMenuPelajaran1Huruf>> = MutableLiveData()
     fun getPelajaran2(){

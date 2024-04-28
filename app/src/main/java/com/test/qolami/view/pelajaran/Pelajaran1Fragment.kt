@@ -61,7 +61,6 @@ class Pelajaran1Fragment : Fragment() {
         pelajaranHurufViewModel = ViewModelProvider(this)[PelajaranHurufViewModel::class.java]
         pelajaranHuruf1Adapter = PelajaranHuruf1Adapter(ArrayList())
         pelajaranHurufViewModel.getPelajaran1()
-
         binding.rcCon.layoutManager = GridLayoutManager(context, 5)
         binding.rcCon.adapter = pelajaranHuruf1Adapter
         pelajaranHurufViewModel.getDataPelajaran1.observe(viewLifecycleOwner) {
