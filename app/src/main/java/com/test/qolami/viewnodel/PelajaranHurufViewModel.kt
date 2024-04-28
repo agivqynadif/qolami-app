@@ -6,6 +6,7 @@ import com.test.qolami.R
 import com.test.qolami.view.pelajaran.data.DataMenuPelajaran1Huruf
 import com.test.qolami.view.pelajaran.data.DataPelajaranHuruf
 import com.test.qolami.view.pelajaran.data.DataPelajaranHurufDetail
+import com.test.qolami.view.pelajaran.data.DataVidPelajaranHuruf
 
 class PelajaranHurufViewModel:ViewModel() {
     val listData = arrayListOf(
@@ -176,5 +177,98 @@ class PelajaranHurufViewModel:ViewModel() {
     fun getPelajaran4 (){
         getDataPelajaran4.value = listDataMenuPelajaran4
     }
+    private val hurufList: List<DataVidPelajaranHuruf> = listOf(
+        DataVidPelajaranHuruf(1,0,"Pelajaran 2","ntD81WB132A"),
+        DataVidPelajaranHuruf(2,0,"Pelajaran 2","Ii477YjhDVk"),
+        DataVidPelajaranHuruf(3,0,"Pelajaran 2","6UexQWMnx0I"),
+        DataVidPelajaranHuruf(4,0,"Pelajaran 2","moa8jxvBM_g"),
+        DataVidPelajaranHuruf(5,0,"Pelajaran 2","OF0pHtNcJts"),
+        DataVidPelajaranHuruf(6,0, "Pelajaran 2" ,"uLXf6TiBhXo"),
+        DataVidPelajaranHuruf(7,0,"Pelajaran 2","06mNtQn5hPM"),
+        DataVidPelajaranHuruf(8,0,"Pelajaran 2","KLA7uwvxyvg"),
+        DataVidPelajaranHuruf(9,0,"Pelajaran 2","bs-yAjuvs0k"),
+        DataVidPelajaranHuruf(10,0,"Pelajaran 2","zTJpyte5QHU"),
+        DataVidPelajaranHuruf(11,0,"Pelajaran 2","jcL6tk5FIt8"),
+        DataVidPelajaranHuruf(12,0,"Pelajaran 2","T4rX3SeZH-c"),
+        DataVidPelajaranHuruf(13,0,"Pelajaran 2","eEpYreBDeE8"),
+        DataVidPelajaranHuruf(14,0,"Pelajaran 2","mLUaUAL-Ty8"),
+        DataVidPelajaranHuruf(15,0,"Pelajaran 2","YWbUdRmyQsQ"),
+        DataVidPelajaranHuruf(16,0,"Pelajaran 2","6FzZ3jQrvL8"),
+        DataVidPelajaranHuruf(17,0,"Pelajaran 2","lg441UMEv_Q"),
+        DataVidPelajaranHuruf(18,0,"Pelajaran 2","06WeCyI7E5c"),
+        DataVidPelajaranHuruf(19,0,"Pelajaran 2","GNDEM9GktSw"),
+        DataVidPelajaranHuruf(20,0,"Pelajaran 2","q9W37UTUPIU"),
+        DataVidPelajaranHuruf(21,0,"Pelajaran 2","aBxg0IK6uBI"),
+        DataVidPelajaranHuruf(22,0,"Pelajaran 2","7DKP8vW8AOo"),
+        DataVidPelajaranHuruf(23,0,"Pelajaran 2","XQaApdhUYVE"),
+        DataVidPelajaranHuruf(24,0,"Pelajaran 2","M6rl_6dC66Q"),
+        DataVidPelajaranHuruf(25,0,"Pelajaran 2","PyjozCgnyI8"),
+        DataVidPelajaranHuruf(26,0,"Pelajaran 2","VsnSAjDNTXs"),
+        DataVidPelajaranHuruf(27,0,"Pelajaran 2","WHU0lJbWVuk"),
+        DataVidPelajaranHuruf(28,0,"Pelajaran 2","3CzzT9ZO604")
+    )
+
+    private val hurufListKasrah: List<DataVidPelajaranHuruf> = listOf(
+        DataVidPelajaranHuruf(1,0,"Alif Berharakat Kasrah","wJ8WaPcZM_M"),
+        DataVidPelajaranHuruf(2,0,"Ba Berharakat Kasrah","IrLP1XYuIjs"),
+        DataVidPelajaranHuruf(3,0,"Ta Berharakat Kasrah","4zN2OpUqJI8"),
+        DataVidPelajaranHuruf(4,0,"Tsa Berharakat Kasrah","U5xikMGMdTg"),
+        DataVidPelajaranHuruf(5,0,"Jim Berharakat Kasrah","uXO3saszpSk"),
+        DataVidPelajaranHuruf(6,0,"Ha Berharakat Kasrah","Y_-BPpF6AW8"),
+        DataVidPelajaranHuruf(7,0,"Kho Berharakat Kasrah","sBl7jEm0Xmk"),
+        DataVidPelajaranHuruf(8,0,"Dal Berharakat Kasrah","fapuqkYj4kA"),
+        DataVidPelajaranHuruf(9,0,"Dzal Berharakat Kasrah","dz6kejEOMuw"),
+        DataVidPelajaranHuruf(10,0,"Ra Berharakat Kasrah","Vl6wNuQFyT0"),
+        DataVidPelajaranHuruf(11,0,"Zayn Berharakat Kasrah","If0u90dumo4"),
+        DataVidPelajaranHuruf(12,0,"Sin Berharakat Kasrah","Sw2CeqRO5io"),
+        DataVidPelajaranHuruf(13,0,"Syin Berharakat Kasrah","1fAnO0rayPQ"),
+        DataVidPelajaranHuruf(14,0,"Shod Berharakat Kasrah","2AadONAOWi0"),
+        DataVidPelajaranHuruf(15,0,"Dhod Berharakat Kasrah","dr7FL0hgGlI"),
+        DataVidPelajaranHuruf(16,0,"To Berharakat Kasrah","QhyQKd6XzWU"),
+        DataVidPelajaranHuruf(17,0,"Zo Berharakat Kasrah","PlDEQMjbq2c"),
+        DataVidPelajaranHuruf(18,0,"Ain Berharakat Kasrah","qIWizx3dfuM"),
+        DataVidPelajaranHuruf(19,0,"Ghain Berharakat Kasrah","rh71lUOKgBE"),
+        DataVidPelajaranHuruf(20,0,"Fa Berharakat Kasrah","ikgPz-gDEGA"),
+        DataVidPelajaranHuruf(21,0,"Qaf Berharakat Kasrah","4qtIQLWgLEk"),
+        DataVidPelajaranHuruf(22,0,"Kaf Berharakat Kasrah","6JVs8aeo2D8"),
+        DataVidPelajaranHuruf(23,0,"Lam Berharakat Kasrah","LTrI62DeOGA"),
+        DataVidPelajaranHuruf(24,0,"Mim Berharakat Kasrah","btjrSC7aDe0"),
+        DataVidPelajaranHuruf(25,0,"Nun Berharakat Kasrah","0byc69KkxU0"),
+        DataVidPelajaranHuruf(26,0,"Wau Berharakat Kasrah","YglXvs0T4XE"),
+        DataVidPelajaranHuruf(27,0,"Ha Berharakat Kasrah","6VEPC_Kn4ag"),
+        DataVidPelajaranHuruf(28,0,"Ya Berharakat Kasrah","sAr9seaJo1k")
+    )
+
+    private val hurufListDhammah: List<DataVidPelajaranHuruf> = listOf(
+        DataVidPelajaranHuruf(1,0,"Alif Berharakat Dammah","3p55spJk46s"),
+        DataVidPelajaranHuruf(2,0,"Ba Berharakat Dammah","5GZIedsx9zQ"),
+        DataVidPelajaranHuruf(3,0,"Ta Berharakat Dammah","5-UbyYiIq9M"),
+        DataVidPelajaranHuruf(4,0,"Tsa Berharakat Dammah","Y-dxKGP6FFE"),
+        DataVidPelajaranHuruf(5,0,"Jim Berharakat Dammah","_P49xmOg_FM"),
+        DataVidPelajaranHuruf(6,0,"Ha Berharakat Dammah","ho2mp7mcG84"),
+        DataVidPelajaranHuruf(7,0,"Kho Berharakat Dammah","yuAiHzeXBtY"),
+        DataVidPelajaranHuruf(8,0,"Dal Berharakat Dammah","92U_em94NpY"),
+        DataVidPelajaranHuruf(9,0,"Dzal Berharakat Dammah","FC76mXWU_EY"),
+        DataVidPelajaranHuruf(10,0,"Ra Berharakat Dammah","Vf26PyueaxY"),
+        DataVidPelajaranHuruf(11,0,"Zayn Berharakat Dammah","87_IBOpsq24"),
+        DataVidPelajaranHuruf(12,0,"Sin Berharakat Dammah","98IiZhFm_Nk"),
+        DataVidPelajaranHuruf(13,0,"Syin Berharakat Dammah","QDPmqg2iSOs"),
+        DataVidPelajaranHuruf(14,0,"Shod Berharakat Dammah","Exv3ZFToEnI"),
+        DataVidPelajaranHuruf(15,0,"Dhod Berharakat Dammah","3p2zWs7d84Q"),
+        DataVidPelajaranHuruf(16,0,"To Berharakat Dammah","DhneqkV2qwk"),
+        DataVidPelajaranHuruf(17,0,"Zo Berharakat Dammah","GRTo3Pc4r1I"),
+        DataVidPelajaranHuruf(18,0,"Ain Berharakat Dammah","VEY2nnIHtK8",),
+        DataVidPelajaranHuruf(19,0,"Ghain Berharakat Dammah","ZYlDWl4I4eg"),
+        DataVidPelajaranHuruf(20,0,"Fa Berharakat Dammah","-P_TgzRjFcE"),
+        DataVidPelajaranHuruf(21,0,"Qaf Berharakat Dammah","GR2a8uLjcfE"),
+        DataVidPelajaranHuruf(22,0,"Kaf Berharakat Dammah","Zh89LO0ogAo"),
+        DataVidPelajaranHuruf(23,0,"Lam Berharakat Dammah","s5k__k9Yyhs"),
+        DataVidPelajaranHuruf(24,0,"Mim Berharakat Dammah","mOS_jK54ryw"),
+        DataVidPelajaranHuruf(25,0,"Nun Berharakat Dammah","rq7B6kLOH9w"),
+        DataVidPelajaranHuruf(26,0,"Wau Berharakat Dammah","dfj8IJ_DvTw"),
+        DataVidPelajaranHuruf(27,0,"Ha Berharakat Dammah","RY_v8-_aa1o"),
+        DataVidPelajaranHuruf(28,0,"Ya Berharakat Dammah","U7goKOpzfzw")
+    )
+
 
 }
