@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/warna_bg"
-    tools:context=".view.pelajaran.PelajaranFragment">
+    tools:context=".view.latihan.FragmentLatihan">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -24,12 +24,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/nunito_extrabold"
-            android:text="Pelajaran"
+            android:text="Latihan"
             android:textColor="@color/warna_hijau_tua"
             android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="HardcodedText" />
 
         <TextView
             android:id="@+id/textView2"
@@ -37,10 +38,11 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppins_regular"
             android:text="mari latih pembelajaranmu!"
-            android:textColor="@color/warna_hijau_tua"
+            android:textColor="#2E7D32"
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/text_pelajaran" />
+            app:layout_constraintTop_toBottomOf="@+id/text_pelajaran"
+            tools:ignore="HardcodedText" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/btn_huruf"
@@ -50,7 +52,8 @@
             android:background="@drawable/rounded_bg_pelajaran"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView2">
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            tools:ignore="TextSizeCheck">
 
 
             <ImageView
@@ -61,7 +64,8 @@
                 android:paddingRight="-60dp"
                 android:src="@drawable/img_bg_huruf"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription,ImageContrastCheck" />
 
             <TextView
                 android:id="@+id/text_huruf"
@@ -71,20 +75,23 @@
                 android:fontFamily="@font/poppins_bold"
                 android:text="Huruf"
                 android:textColor="@color/black"
-                android:textSize="24dp"
+                android:textSize="24sp"
                 app:layout_constraintStart_toEndOf="@+id/image_huruf"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText,TextSizeCheck" />
 
             <TextView
                 android:id="@+id/textView4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="55dp"
                 android:fontFamily="@font/nunito_semibold"
-                android:text="Pelajari bagian huruf dulu!"
+                android:text="Mari latih huruf \nyang kamu pelajari!!"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintStart_toEndOf="@+id/image_huruf"
-                app:layout_constraintTop_toBottomOf="@+id/text_huruf" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
 
             <ImageView
                 android:id="@+id/image_next"
@@ -93,7 +100,8 @@
                 android:layout_marginTop="36dp"
                 android:src="@drawable/baseline_navigate_next_24"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -104,19 +112,20 @@
             android:background="@drawable/rounded_bg_pelajaran"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_huruf">
+            app:layout_constraintTop_toBottomOf="@+id/btn_huruf"
+            tools:ignore="TextSizeCheck">
 
 
             <ImageView
                 android:id="@+id/image_kata"
                 android:layout_width="65dp"
                 android:layout_height="65dp"
-
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:src="@drawable/img_kata"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription,ImageContrastCheck" />
 
             <TextView
                 android:id="@+id/text_kata"
@@ -127,22 +136,25 @@
                 android:fontFamily="@font/poppins_bold"
                 android:text="Kata"
                 android:textColor="@color/black"
-                android:textSize="24dp"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/image_kata"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="18dp"
+                android:layout_marginTop="55dp"
                 android:fontFamily="@font/nunito_semibold"
-                android:text="Pelajari makna dari kata!"
+                android:text="Mari latih kata \nyang kamu pelajari!!"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintStart_toEndOf="@+id/image_kata"
-                app:layout_constraintTop_toBottomOf="@+id/text_kata" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
 
             <ImageView
                 android:id="@+id/imageView6"
@@ -151,7 +163,8 @@
                 android:layout_marginTop="36dp"
                 android:src="@drawable/baseline_navigate_next_24"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -162,7 +175,8 @@
             android:background="@drawable/rounded_bg_pelajaran"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_kata">
+            app:layout_constraintTop_toBottomOf="@+id/btn_kata"
+            tools:ignore="TextSizeCheck">
 
 
             <ImageView
@@ -174,7 +188,8 @@
                 android:paddingRight="-80dp"
                 android:src="@drawable/img_rangkaian"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
 
             <TextView
                 android:id="@+id/text_rangkaian"
@@ -185,22 +200,25 @@
                 android:fontFamily="@font/poppins_bold"
                 android:text="Rangkaian"
                 android:textColor="@color/black"
-                android:textSize="24dp"
+                android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toEndOf="@+id/image_rangkaian"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
 
             <TextView
                 android:id="@+id/textView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="55dp"
                 android:fontFamily="@font/nunito_semibold"
-                android:text="Mari merangkai huruf dan kata!"
+                android:text="Mari latih huruf dan kata \nyang telah disusun!"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintStart_toEndOf="@+id/image_rangkaian"
-                app:layout_constraintTop_toBottomOf="@+id/text_rangkaian" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="HardcodedText" />
 
             <ImageView
                 android:id="@+id/imageView7"
@@ -209,7 +227,8 @@
                 android:layout_marginTop="36dp"
                 android:src="@drawable/baseline_navigate_next_24"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="ContentDescription" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 

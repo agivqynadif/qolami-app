@@ -6,9 +6,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.test.qolami.databinding.FragmentPelajaranHurufBinding
-import com.test.qolami.view.adapter.PelajaranHurufAdapter
+import com.test.qolami.view.adapter.pelajaran.PelajaranHurufAdapter
 import com.test.qolami.view.pelajaran.data.DataPelajaranHuruf
 import com.test.qolami.viewnodel.PelajaranHurufViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -30,6 +31,9 @@ class PelajaranHurufFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.imageBack.setOnClickListener {
+            findNavController().navigateUp()
+        }
         layoutData()
 
     }

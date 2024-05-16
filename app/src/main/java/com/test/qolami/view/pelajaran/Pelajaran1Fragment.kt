@@ -6,13 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.test.qolami.databinding.FragmentPelajaran1Binding
-import com.test.qolami.view.adapter.PelajaranHuruf1Adapter
-import com.test.qolami.view.adapter.PelajaranHuruf2Adapter
-import com.test.qolami.view.adapter.PelajaranHuruf3Adapter
-import com.test.qolami.view.adapter.PelajaranHuruf4Adapter
+import com.test.qolami.view.adapter.pelajaran.PelajaranHuruf1Adapter
+import com.test.qolami.view.adapter.pelajaran.PelajaranHuruf2Adapter
+import com.test.qolami.view.adapter.pelajaran.PelajaranHuruf3Adapter
+import com.test.qolami.view.adapter.pelajaran.PelajaranHuruf4Adapter
 import com.test.qolami.view.pelajaran.data.DataMenuPelajaran1Huruf
 import com.test.qolami.viewnodel.PelajaranHurufViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -36,6 +36,9 @@ class Pelajaran1Fragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.imageBack.setOnClickListener {
+            findNavController().navigateUp()
+        }
         pelajaranHurufViewModel = ViewModelProvider(this)[PelajaranHurufViewModel::class.java]
         val getDataPelajaran = this.arguments?.getString("pelajaranAtas")
         val getDataJudulPelajaran = this.arguments?.getString("judul")
@@ -71,7 +74,6 @@ class Pelajaran1Fragment : Fragment() {
         pelajaranHurufViewModel = ViewModelProvider(this)[PelajaranHurufViewModel::class.java]
         pelajaranHuruf2Adapter = PelajaranHuruf2Adapter(ArrayList())
         pelajaranHurufViewModel.getPelajaran2()
-
         binding.rcCon.layoutManager = GridLayoutManager(context, 5)
         binding.rcCon.adapter = pelajaranHuruf2Adapter
         pelajaranHurufViewModel.getDataPelajaran2.observe(viewLifecycleOwner){

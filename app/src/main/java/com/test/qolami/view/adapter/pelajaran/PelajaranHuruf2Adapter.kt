@@ -1,7 +1,9 @@
-package com.test.qolami.view.adapter
+package com.test.qolami.view.adapter.pelajaran
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.test.qolami.R
@@ -35,5 +37,11 @@ class PelajaranHuruf2Adapter( var listHurufFathah: ArrayList<DataMenuPelajaran1H
         }
         val test = holder.itemView.context.resources.getColor(color, null)
         holder.binding.cv.setCardBackgroundColor(test)
+        holder.binding.imageView2.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putInt("id2", listHurufFathah[position].id)
+            bundle.putString("judul", "Pelajaran 2")
+            it.findNavController().navigate(R.id.action_pelajaran1Fragment_to_videoPembelajaranFragment, bundle)
+        }
     }
 }

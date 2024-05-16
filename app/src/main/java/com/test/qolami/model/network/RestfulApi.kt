@@ -1,15 +1,14 @@
 package com.test.qolami.model.network
 
-import com.test.qolami.model.data.Data
-import com.test.qolami.model.data.LoginUserResponse
-import com.test.qolami.model.data.LupaPasswordResponse
-import com.test.qolami.model.data.NewUser
+import com.test.qolami.model.data.latihan.BankSoalImageResponse
+import com.test.qolami.model.data.latihan.DataXX
+import com.test.qolami.model.data.latihan.LatihanHijaiyah
+import com.test.qolami.model.data.user.Data
+import com.test.qolami.model.data.user.LoginUserResponse
+import com.test.qolami.model.data.user.LupaPasswordResponse
+import com.test.qolami.model.data.user.NewUser
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.POST
-import retrofit2.http.PUT
+import retrofit2.http.*
 
 interface RestfulApi {
     @POST("auth/register")
@@ -28,4 +27,7 @@ interface RestfulApi {
         @Field("newPassword") newPassword:String,
         @Field("repeatNewPassword") repeatNewPassword:String
     ): Call<LupaPasswordResponse>
+
+    @GET("images-practice/hijaiyah")
+    fun getSoalImage(): Call<BankSoalImageResponse>
 }

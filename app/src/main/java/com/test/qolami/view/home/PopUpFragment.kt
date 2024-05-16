@@ -30,12 +30,7 @@ class PopUpFragment : DialogFragment() {
             findNavController().navigate(R.id.action_homeFragment_to_loginFragment)
             dismiss()
         }
-        binding.buttonLatihan.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_loginFragment)
-        }
-        binding.buttonLatihan.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_loginFragment)
-        }
+
     }
 
 

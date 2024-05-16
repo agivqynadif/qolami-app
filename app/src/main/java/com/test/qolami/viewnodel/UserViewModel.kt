@@ -4,10 +4,10 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.test.qolami.model.data.Data
-import com.test.qolami.model.data.LoginUserResponse
-import com.test.qolami.model.data.LupaPasswordResponse
-import com.test.qolami.model.data.NewUser
+import com.test.qolami.model.data.user.Data
+import com.test.qolami.model.data.user.LoginUserResponse
+import com.test.qolami.model.data.user.LupaPasswordResponse
+import com.test.qolami.model.data.user.NewUser
 import com.test.qolami.model.network.RestfulApi
 import dagger.hilt.android.lifecycle.HiltViewModel
 import retrofit2.Call

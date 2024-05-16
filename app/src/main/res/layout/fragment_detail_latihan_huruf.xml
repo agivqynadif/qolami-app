@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/warna_bg"
-    tools:context=".view.pelajaran.PelajaranHurufFragment">
+    tools:context=".view.latihan.FragmentDetailLatihanHuruf">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -13,6 +13,8 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -30,142 +32,130 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="145dp"
-            android:layout_marginEnd="148dp"
             android:fontFamily="@font/montserrat_bold"
-            android:textSize="24sp"
+            android:text="Latihan Huruf"
 
             android:textColor="@color/warna_hijau_tua"
-            android:text="Latihan Huruf"
+            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/imageView4"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/iv_latihan_gambar"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
             android:layout_marginTop="16dp"
-            app:layout_constraintDimensionRatio="1:1"
+
+            android:src="@drawable/ic_latihan_gambar"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHeight_percent="0.3"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textView"
-            tools:src="@drawable/ic_latihan_gambar" />
+            app:layout_constraintTop_toBottomOf="@id/textView" />
 
         <TextView
             android:id="@+id/tv_latihan_gambar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Gambar"
+            android:layout_marginTop="-25dp"
             android:fontFamily="@font/poppins_bold"
+            android:text="Gambar"
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="18dp"
-            android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/iv_latihan_gambar"
-            android:layout_marginTop="-42dp"
-            />
+            app:layout_constraintTop_toBottomOf="@id/iv_latihan_gambar" />
 
         <TextView
             android:id="@+id/tv_nilai_latihan_gambar"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="0/100"
+            android:layout_marginTop="-8dp"
             android:fontFamily="@font/poppins_bold"
+            android:text="0/100"
+            android:textAlignment="center"
             android:textColor="@color/warna_hijau_tua"
             android:textSize="18dp"
-            android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_latihan_gambar"
-            android:layout_marginTop="-8dp"
-            />
+            app:layout_constraintTop_toBottomOf="@id/tv_latihan_gambar" />
 
         <ImageView
             android:id="@+id/iv_latihan_video"
-            android:layout_width="0dp"
-            android:layout_height="200dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintDimensionRatio="1:1"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+
+            android:src="@drawable/ic_latihan_video"
+
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent="0.2"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_nilai_latihan_gambar"
-            tools:src="@drawable/ic_latihan_video" />
+            app:layout_constraintTop_toBottomOf="@id/tv_nilai_latihan_gambar" />
 
         <TextView
             android:id="@+id/tv_latihan_video"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Video"
+            android:layout_marginTop="-10dp"
             android:fontFamily="@font/poppins_bold"
+            android:text="Video"
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="18dp"
-            android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/iv_latihan_video"
-            android:layout_marginTop="-10dp"
-            />
+            app:layout_constraintTop_toBottomOf="@id/iv_latihan_video" />
 
         <TextView
             android:id="@+id/tv_nilai_latihan_video"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="0/100"
+            android:layout_marginTop="-8dp"
             android:fontFamily="@font/poppins_bold"
+            android:text="0/100"
+            android:textAlignment="center"
             android:textColor="@color/warna_hijau_tua"
             android:textSize="18dp"
-            android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_latihan_video"
-            android:layout_marginTop="-8dp"
-            />
+            app:layout_constraintTop_toBottomOf="@id/tv_latihan_video" />
 
         <ImageView
             android:id="@+id/iv_latihan_audio"
-            android:layout_width="0dp"
-            android:layout_height="240dp"
-            app:layout_constraintDimensionRatio="1:1"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/ic_latihan_audio"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHeight_percent="0.2"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_nilai_latihan_video"
-            tools:src="@drawable/ic_latihan_audio" />
+            app:layout_constraintTop_toBottomOf="@id/tv_nilai_latihan_video" />
 
         <TextView
             android:id="@+id/tv_latihan_audio"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="Audio"
+            android:layout_marginTop="-25dp"
             android:fontFamily="@font/poppins_bold"
+            android:text="Audio"
+            android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="18dp"
-            android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/iv_latihan_audio"
-            android:layout_marginTop="-34dp"
-            />
+            app:layout_constraintTop_toBottomOf="@id/iv_latihan_audio" />
 
         <TextView
             android:id="@+id/tv_nilai_latihan_audio"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="0/100"
+            android:layout_marginTop="-8dp"
             android:fontFamily="@font/poppins_bold"
+            android:text="0/100"
+            android:textAlignment="center"
             android:textColor="@color/warna_hijau_tua"
             android:textSize="18dp"
-            android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_latihan_audio"
-            android:layout_marginTop="-8dp"
-            />
-
+            app:layout_constraintTop_toBottomOf="@id/tv_latihan_audio" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

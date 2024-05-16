@@ -19,7 +19,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/image_back"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/ic_back"
@@ -30,15 +30,12 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="145dp"
-            android:layout_marginEnd="148dp"
             android:fontFamily="@font/montserrat_bold"
-            android:textSize="24sp"
-
-            android:textColor="@color/warna_hijau_tua"
             android:text="Pelajaran Huruf"
+            android:textColor="@color/warna_hijau_tua"
+            android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageView4"
+            app:layout_constraintStart_toEndOf="@+id/image_back"
             app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.recyclerview.widget.RecyclerView

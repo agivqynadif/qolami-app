@@ -63,9 +63,7 @@
         <ImageView
             android:id="@+id/imageView3"
             android:layout_width="245dp"
-            android:layout_height="310dp"
-            android:layout_marginStart="56dp"
-            android:layout_marginEnd="56dp"
+            android:layout_height="250dp"
             android:src="@drawable/bg_onboarding1"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

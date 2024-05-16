@@ -30,6 +30,9 @@ class DetailPelajaranFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.imageBack.setOnClickListener {
+            findNavController().navigateUp()
+        }
         pelajaranHurufViewModel = ViewModelProvider(this).get(PelajaranHurufViewModel::class.java)
         pelajaranHurufViewModel.getDataDetail()
         pelajaranHurufViewModel.getDataHurufDetail.observe(this){

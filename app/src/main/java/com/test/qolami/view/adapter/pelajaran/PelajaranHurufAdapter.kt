@@ -1,4 +1,4 @@
-package com.test.qolami.view.adapter
+package com.test.qolami.view.adapter.pelajaran
 
 import android.os.Bundle
 import android.view.LayoutInflater

@@ -12,7 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.test.qolami.R
 import com.test.qolami.databinding.FragmentRegisterBinding
-import com.test.qolami.model.data.Data
+import com.test.qolami.model.data.user.Data
 import com.test.qolami.viewnodel.UserViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
