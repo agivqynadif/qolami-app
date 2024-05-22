@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/image_back"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:src="@drawable/ic_back"
@@ -38,7 +38,7 @@
             android:textColor="@color/warna_hijau_tua"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imageView4"
+            app:layout_constraintStart_toEndOf="@+id/image_back"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
@@ -62,7 +62,7 @@
             android:text="Gambar"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="18dp"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/iv_latihan_gambar" />
@@ -73,10 +73,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="-8dp"
             android:fontFamily="@font/poppins_bold"
-            android:text="0/100"
+            android:text=""
             android:textAlignment="center"
             android:textColor="@color/warna_hijau_tua"
-            android:textSize="18dp"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_latihan_gambar" />
@@ -101,7 +101,7 @@
             android:text="Video"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="18dp"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/iv_latihan_video" />
@@ -112,10 +112,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="-8dp"
             android:fontFamily="@font/poppins_bold"
-            android:text="0/100"
+            android:text=""
             android:textAlignment="center"
             android:textColor="@color/warna_hijau_tua"
-            android:textSize="18dp"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_latihan_video" />
@@ -138,7 +138,7 @@
             android:text="Audio"
             android:textAlignment="center"
             android:textColor="@color/black"
-            android:textSize="18dp"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/iv_latihan_audio" />
@@ -149,10 +149,10 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="-8dp"
             android:fontFamily="@font/poppins_bold"
-            android:text="0/100"
+            android:text=""
             android:textAlignment="center"
             android:textColor="@color/warna_hijau_tua"
-            android:textSize="18dp"
+            android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_latihan_audio" />

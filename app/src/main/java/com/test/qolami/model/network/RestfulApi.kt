@@ -1,12 +1,13 @@
 package com.test.qolami.model.network
 
 import com.test.qolami.model.data.latihan.BankSoalImageResponse
-import com.test.qolami.model.data.latihan.DataXX
-import com.test.qolami.model.data.latihan.LatihanHijaiyah
-import com.test.qolami.model.data.user.Data
-import com.test.qolami.model.data.user.LoginUserResponse
-import com.test.qolami.model.data.user.LupaPasswordResponse
-import com.test.qolami.model.data.user.NewUser
+import com.test.qolami.model.data.latihan.BankSoalVideoResponse
+import com.test.qolami.model.data.latihan.DataSoalDhammah
+import com.test.qolami.model.data.latihan.DataSoalKasrah
+import com.test.qolami.model.data.score.GetScoreResponse
+import com.test.qolami.model.data.score.ScoreResponse
+import com.test.qolami.model.data.score.UserId
+import com.test.qolami.model.data.user.*
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -27,7 +28,32 @@ interface RestfulApi {
         @Field("newPassword") newPassword:String,
         @Field("repeatNewPassword") repeatNewPassword:String
     ): Call<LupaPasswordResponse>
-
+    @GET("user/{userId}")
+    fun getUser(
+        @Path ("userId") userId:String
+    ):Call<UserResponse>
     @GET("images-practice/hijaiyah")
     fun getSoalImage(): Call<BankSoalImageResponse>
+    @GET("images-practice/fathah")
+    fun getSoalImageFathah(): Call<BankSoalImageResponse>
+    @GET("images-practice/kasrah")
+    fun getSoalImageKasrah(): Call<BankSoalImageResponse>
+    @GET("images-practice/dhammah")
+    fun getSoalImageDhammah(): Call<BankSoalImageResponse>
+
+    @GET("videos-practice/fathah")
+    fun getSoalVideosFathah(): Call<BankSoalVideoResponse>
+    @GET("videos-practice/kasrah")
+    fun getSoalVideosKasrah(): Call<DataSoalKasrah>
+    @GET("videos-practice/dhammah")
+    fun getSoalVideosDhammah(): Call<DataSoalDhammah>
+    @PATCH("user/score/{userId}")
+    fun patchScore(
+        @Path ("userId") userId: String,
+        @Body request: com.test.qolami.model.data.score.Data
+    ):Call<ScoreResponse>
+    @GET("user/score/{userId}")
+    fun getScore(
+        @Path ("userId") userId: String
+    ):Call<GetScoreResponse>
 }

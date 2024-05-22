@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.FragmentManager
 import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -27,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener { navcontroler, destination, bundle ->
 
             when (destination.id) {
-                R.id.homeFragment, R.id.pelajaran-> {
+                R.id.homeFragment, R.id.pelajaranFragment, R.id.fragmentLatihan ->  {
                     bottomNavView.visibility = View.VISIBLE
                 }
                 else -> {
@@ -37,7 +38,21 @@ class MainActivity : AppCompatActivity() {
         }
         NavigationUI.setupWithNavController(bottomNavView, navController)
         bottomNavView.setOnItemSelectedListener { menuItem ->
-            // Menangani aksi saat item dipilih di sini
+            when(menuItem.itemId){
+                R.id.home ->{
+                    navController.navigate(R.id.homeFragment)
+                    true
+                }
+                R.id.pelajaran ->{
+                    navController.navigate(R.id.pelajaranFragment)
+                    true
+                }
+                R.id.latihan -> {
+                    navController.navigate(R.id.fragmentLatihan)
+                    true
+                }
+                else -> false
+            }
 
             true // Mengembalikan true menandakan bahwa aksi telah ditangani
         }

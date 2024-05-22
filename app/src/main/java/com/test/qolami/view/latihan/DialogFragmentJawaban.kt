@@ -1,6 +1,7 @@
 package com.test.qolami.view.latihan
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
@@ -27,7 +28,6 @@ class DialogFragmentJawaban : BottomSheetDialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         val jawabanBenar = (requireParentFragment() as FragmentSoalLatihanImage).checkJawaban()
         if (jawabanBenar == false){
             view.findViewById<LinearLayout>(R.id.id_lyt).setBackgroundColor(resources.getColor(R.color.merah))

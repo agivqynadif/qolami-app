@@ -62,9 +62,14 @@ class LoginFragment : Fragment() {
                 Log.i("LoginStatus", "Status: $loginUserResponse")
                 if(loginUserResponse != null) {
                     val test = loginUserResponse.data.token
+                    val id = loginUserResponse.data._id
+                    val profileName = loginUserResponse.data.username
                     val sharedPreferences = requireContext().getSharedPreferences("LOGIN", Context.MODE_PRIVATE)
                     sharedPreferences.edit().putString("token", test).apply()
+                    sharedPreferences.edit().putString("id", id).apply()
+                    sharedPreferences.edit().putString("name", profileName).apply()
                     Log.i("observer", "1")
+                    Log.i("id", "$id")
                     Toast.makeText(context, "Login Berhasil!", Toast.LENGTH_SHORT).show()
                     findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
                     isPositiveResponseReceived = true

@@ -18,6 +18,7 @@ import com.test.qolami.viewnodel.PelajaranHurufViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 
+@Suppress("DEPRECATION")
 @AndroidEntryPoint
 class VideoPembelajaranFragment : Fragment() {
     private lateinit var binding: FragmentVideoPembelajaranBinding

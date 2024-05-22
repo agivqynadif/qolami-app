@@ -1,13 +1,14 @@
 package com.test.qolami.viewnodel
 
+
 import android.util.Log
+
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.test.qolami.R
-import com.test.qolami.model.data.latihan.BankSoalImageResponse
-import com.test.qolami.model.data.latihan.DataXX
-import com.test.qolami.model.data.latihan.LatihanHijaiyah
+
+import com.test.qolami.model.data.latihan.*
 import com.test.qolami.model.network.RestfulApi
 import com.test.qolami.view.latihan.data.DataLatihanHuruf
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -49,6 +50,127 @@ class LatihanHurufViewModel @Inject constructor(private val Client: RestfulApi) 
             }
 
             override fun onFailure(call: Call<BankSoalImageResponse>, t: Throwable) {
+                Log.e("Error: ", "onFailure : ${t.message}")
+            }
+
+        })
+    }
+    private var liveDataSoalImageFathah: MutableLiveData<DataXX> = MutableLiveData()
+    val dataSoalImageFathah: LiveData<DataXX> get() = liveDataSoalImageFathah
+    fun getSoalFathah() {
+        Client.getSoalImageFathah().enqueue(object : Callback<BankSoalImageResponse> {
+            override fun onResponse(call: Call<BankSoalImageResponse>, response: Response<BankSoalImageResponse>) {
+                if (response.isSuccessful) {
+                    liveDataSoalImageFathah.postValue(response.body()!!.data)
+
+                } else {
+                    liveDataSoalImageFathah.postValue(null)
+                    Log.e("Error", "onFailure: Error")
+                }
+            }
+
+            override fun onFailure(call: Call<BankSoalImageResponse>, t: Throwable) {
+                Log.e("Error: ", "onFailure : ${t.message}")
+            }
+
+        })
+    }
+    private var liveDataSoalImageKasrah: MutableLiveData<DataXX> = MutableLiveData()
+    val dataSoalImageKasrah: LiveData<DataXX> get() = liveDataSoalImageKasrah
+    fun getSoalKasrah() {
+        Client.getSoalImageKasrah().enqueue(object : Callback<BankSoalImageResponse> {
+            override fun onResponse(call: Call<BankSoalImageResponse>, response: Response<BankSoalImageResponse>) {
+                if (response.isSuccessful) {
+                    liveDataSoalImageKasrah.postValue(response.body()!!.data)
+
+
+                } else {
+                    liveDataSoalImageKasrah.postValue(null)
+                    Log.e("Error", "onFailure: Error")
+                }
+            }
+
+            override fun onFailure(call: Call<BankSoalImageResponse>, t: Throwable) {
+                Log.e("Error: ", "onFailure : ${t.message}")
+            }
+
+        })
+    }
+    private var liveDataSoalImageDhammah: MutableLiveData<DataXX> = MutableLiveData()
+    val dataSoalImageDhammah: LiveData<DataXX> get() = liveDataSoalImageDhammah
+    fun getSoalDhammah() {
+        Client.getSoalImageDhammah().enqueue(object : Callback<BankSoalImageResponse> {
+            override fun onResponse(call: Call<BankSoalImageResponse>, response: Response<BankSoalImageResponse>) {
+                if (response.isSuccessful) {
+                    liveDataSoalImageDhammah.postValue(response.body()!!.data)
+
+                } else {
+                    liveDataSoalImageDhammah.postValue(null)
+                    Log.e("Error", "onFailure: Error")
+                }
+            }
+
+            override fun onFailure(call: Call<BankSoalImageResponse>, t: Throwable) {
+                Log.e("Error: ", "onFailure : ${t.message}")
+            }
+
+        })
+    }
+    private var liveDataSoalVideosFathah: MutableLiveData<Data> = MutableLiveData()
+    val dataSoalVideosFathah: LiveData<Data> get() = liveDataSoalVideosFathah
+    fun getSoalVideoFathah() {
+        Client.getSoalVideosFathah().enqueue(object : Callback<BankSoalVideoResponse> {
+            override fun onResponse(call: Call<BankSoalVideoResponse>, response: Response<BankSoalVideoResponse>) {
+                if (response.isSuccessful) {
+                    liveDataSoalVideosFathah.postValue(response.body()!!.data)
+
+                } else {
+                    liveDataSoalVideosFathah.postValue(null)
+                    Log.e("Error", "onFailure: Error")
+                }
+            }
+
+            override fun onFailure(call: Call<BankSoalVideoResponse>, t: Throwable) {
+                Log.e("Error: ", "onFailure : ${t.message}")
+            }
+
+        })
+    }
+    private var liveDataSoalVideosKasrah: MutableLiveData<DataX> = MutableLiveData()
+    val dataSoalVideosKasrah: LiveData<DataX> get() = liveDataSoalVideosKasrah
+    fun getSoalVideoKasrah() {
+        Client.getSoalVideosKasrah().enqueue(object : Callback<DataSoalKasrah> {
+            override fun onResponse(call: Call<DataSoalKasrah>, response: Response<DataSoalKasrah>) {
+                if (response.isSuccessful) {
+                    liveDataSoalVideosKasrah.postValue(response.body()!!.data)
+
+                } else {
+                    liveDataSoalVideosKasrah.postValue(null)
+                    Log.e("Error", "onFailure: Error")
+                }
+            }
+
+            override fun onFailure(call: Call<DataSoalKasrah>, t: Throwable) {
+                Log.e("Error: ", "onFailure : ${t.message}")
+            }
+
+        })
+    }
+    private var liveDataSoalVideosDhammah: MutableLiveData<DataXXX> = MutableLiveData()
+    val dataSoalVideosDhammah: LiveData<DataXXX> get() = liveDataSoalVideosDhammah
+    fun getSoalVideoDhammah() {
+        Client.getSoalVideosDhammah().enqueue(object : Callback<DataSoalDhammah> {
+            override fun onResponse(call: Call<DataSoalDhammah>, response: Response<DataSoalDhammah>) {
+                if (response.isSuccessful) {
+                    liveDataSoalVideosDhammah.postValue(response.body()!!.data)
+
+                } else {
+                    liveDataSoalVideosDhammah.postValue(null)
+                    Log.e("Error", "onFailure: Error")
+                }
+            }
+
+            override fun onFailure(call: Call<DataSoalDhammah>, t: Throwable) {
                 Log.e("Error: ", "onFailure : ${t.message}")
             }
 

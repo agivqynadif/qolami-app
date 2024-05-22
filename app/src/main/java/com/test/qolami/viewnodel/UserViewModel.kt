@@ -4,10 +4,7 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.test.qolami.model.data.user.Data
-import com.test.qolami.model.data.user.LoginUserResponse
-import com.test.qolami.model.data.user.LupaPasswordResponse
-import com.test.qolami.model.data.user.NewUser
+import com.test.qolami.model.data.user.*
 import com.test.qolami.model.network.RestfulApi
 import dagger.hilt.android.lifecycle.HiltViewModel
 import retrofit2.Call
@@ -18,6 +15,26 @@ import javax.inject.Inject
 @HiltViewModel
 class UserViewModel @Inject constructor(private val Client:RestfulApi): ViewModel() {
     //Untuk Mengatur Register Response api
+    private var liveGetDataUser: MutableLiveData<DataXX> = MutableLiveData()
+     var dataGetDataUser: LiveData<DataXX> = liveGetDataUser
+    fun getUser(userId: String) {
+        Client.getUser(userId).enqueue(object : Callback<UserResponse> {
+            override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
+                if (response.isSuccessful) {
+                    liveGetDataUser.postValue(response.body()!!.data)
+
+                } else {
+                    liveGetDataUser.postValue(null)
+                    Log.e("Error", "onFailure: ${response.body()?.message}")
+                }
+            }
+
+            override fun onFailure(call: Call<UserResponse>, t: Throwable) {
+                Log.e("Error: ", "onFailure : ${t.message}")
+            }
+
+        })
+    }
     private var liveDataUser: MutableLiveData<NewUser> = MutableLiveData()
     val dataPostUser: LiveData<NewUser> get() = liveDataUser
     fun registerPost(dataNewUser: Data) {

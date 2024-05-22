@@ -59,6 +59,7 @@ class RegisterFragment : Fragment() {
                 sharedPref.putString("username", username)
                 sharedPref.putString("password", password)
                 sharedPref.putString("namaprofile", namaLengkap)
+                sharedPref.putString("idUser", it.data.id)
                 Toast.makeText(requireContext(), "Pendaftaran Berhasil", Toast.LENGTH_SHORT).show()
                 sharedPref.apply()
             }

@@ -1,8 +1,11 @@
 package com.test.qolami.view.adapter.latihan
 
+import android.content.Context
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -31,7 +34,7 @@ class LatihanHurufAdapter (var dataHuruf: ArrayList<DataLatihanHuruf>):RecyclerV
         holder.binding.textPenjelasan.text = dataHuruf[position].penjelesan
         holder.binding.btnDetil.setOnClickListener {
             val bundle = Bundle()
-            bundle.putString("Latihan", dataHuruf[position].latihan)
+            bundle.putString("latihan", dataHuruf[position].latihan)
             it.findNavController().navigate(R.id.action_fragmentLatihanHuruf_to_fragmentDetailLatihanHuruf, bundle)
         }
     }

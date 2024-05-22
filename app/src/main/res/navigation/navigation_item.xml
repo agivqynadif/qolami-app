@@ -57,6 +57,9 @@
         <action
             android:id="@+id/action_homeFragment_to_fragmentLatihan"
             app:destination="@id/fragmentLatihan" />
+        <action
+            android:id="@+id/action_homeFragment_to_akunFragment"
+            app:destination="@id/akunFragment" />
     </fragment>
     <fragment
         android:id="@+id/onBoardingMangerFragment"
@@ -155,6 +158,9 @@
         <action
             android:id="@+id/action_fragmentLatihanHuruf_to_fragmentDetailLatihanHuruf"
             app:destination="@id/fragmentDetailLatihanHuruf" />
+        <action
+            android:id="@+id/action_fragmentLatihanHuruf_to_fragmentLatihan"
+            app:destination="@id/fragmentLatihan" />
     </fragment>
     <fragment
         android:id="@+id/fragmentDetailLatihanHuruf"
@@ -164,6 +170,12 @@
         <action
             android:id="@+id/action_fragmentDetailLatihanHuruf_to_fragmentSoalLatihanImage"
             app:destination="@id/fragmentSoalLatihanImage" />
+        <action
+            android:id="@+id/action_fragmentDetailLatihanHuruf_to_fragmentLatihanHuruf"
+            app:destination="@id/fragmentLatihanHuruf" />
+        <action
+            android:id="@+id/action_fragmentDetailLatihanHuruf_to_fragmentSoalLatihanVideos"
+            app:destination="@id/fragmentSoalLatihanVideos" />
     </fragment>
     <fragment
         android:id="@+id/fragmentSoalLatihanImage"
@@ -173,6 +185,9 @@
         <action
             android:id="@+id/action_fragmentSoalLatihanImage_to_fragmentHasilLatihan"
             app:destination="@id/fragmentHasilLatihan" />
+        <action
+            android:id="@+id/action_fragmentSoalLatihanImage_to_fragmentDetailLatihanHuruf"
+            app:destination="@id/fragmentDetailLatihanHuruf" />
     </fragment>
     <fragment
         android:id="@+id/fragmentHasilLatihan"
@@ -183,4 +198,58 @@
             android:id="@+id/action_fragmentHasilLatihan_to_fragmentDetailLatihanHuruf"
             app:destination="@id/fragmentDetailLatihanHuruf" />
     </fragment>
+    <fragment
+        android:id="@+id/fragmentSoalLatihanVideos"
+        android:name="com.test.qolami.view.latihan.FragmentSoalLatihanVideos"
+        android:label="fragment_soal_latihan_videos"
+        tools:layout="@layout/fragment_soal_latihan_videos" >
+        <action
+            android:id="@+id/action_fragmentSoalLatihanVideos_to_fragmentDetailLatihanHuruf"
+            app:destination="@id/fragmentDetailLatihanHuruf" />
+        <action
+            android:id="@+id/action_fragmentSoalLatihanVideos_to_fragmentHasilLatihanVideos"
+            app:destination="@id/fragmentHasilLatihanVideos" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentHasilLatihanVideos"
+        android:name="com.test.qolami.view.latihan.FragmentHasilLatihanVideos"
+        android:label="fragment_hasil_latihan_videos"
+        tools:layout="@layout/fragment_hasil_latihan_videos" >
+        <action
+            android:id="@+id/action_fragmentHasilLatihanVideos_to_fragmentDetailLatihanHuruf"
+            app:destination="@id/fragmentDetailLatihanHuruf" />
+    </fragment>
+    <fragment
+        android:id="@+id/akunFragment"
+        android:name="com.test.qolami.view.account.AkunFragment"
+        android:label="fragment_akun"
+        tools:layout="@layout/fragment_akun" >
+        <action
+            android:id="@+id/action_akunFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_akunFragment_to_fragmentInfo"
+            app:destination="@id/fragmentInfo" />
+        <action
+            android:id="@+id/action_akunFragment_to_resetPasswordFragment"
+            app:destination="@id/resetPasswordFragment" />
+        <action
+            android:id="@+id/action_akunFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.test.qolami.view.account.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/fragmentInfo"
+        android:name="com.test.qolami.view.info.FragmentInfo"
+        android:label="fragment_info"
+        tools:layout="@layout/fragment_info" />
+    <fragment
+        android:id="@+id/resetPasswordFragment"
+        android:name="com.test.qolami.view.user.ResetPasswordFragment"
+        android:label="fragment_reset_password"
+        tools:layout="@layout/fragment_reset_password" />
 </navigation>

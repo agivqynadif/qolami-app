@@ -32,7 +32,7 @@ class FragmentLatihanHuruf : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.imageView4.setOnClickListener {
+        binding.imageBack.setOnClickListener {
             findNavController().navigateUp()
         }
         layoutData()
