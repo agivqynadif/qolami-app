@@ -15,22 +15,38 @@ import javax.inject.Inject
 @HiltViewModel
 class UserViewModel @Inject constructor(private val Client:RestfulApi): ViewModel() {
     //Untuk Mengatur Register Response api
-    private var liveGetDataUser: MutableLiveData<DataXX> = MutableLiveData()
-     var dataGetDataUser: LiveData<DataXX> = liveGetDataUser
-    fun getUser(userId: String) {
-        Client.getUser(userId).enqueue(object : Callback<UserResponse> {
-            override fun onResponse(call: Call<UserResponse>, response: Response<UserResponse>) {
+    private var livePatchUser: MutableLiveData<GantiProfileNameResponse> = MutableLiveData()
+     var dataUser: LiveData<GantiProfileNameResponse> = livePatchUser
+    fun patchUser(userId: String, username:String) {
+        Client.patchUser(userId, username).enqueue(object : Callback<GantiProfileNameResponse> {
+            override fun onResponse(call: Call<GantiProfileNameResponse>, response: Response<GantiProfileNameResponse>) {
                 if (response.isSuccessful) {
-                    liveGetDataUser.postValue(response.body()!!.data)
-
+                    livePatchUser.postValue(response.body()!!)
                 } else {
-                    liveGetDataUser.postValue(null)
                     Log.e("Error", "onFailure: ${response.body()?.message}")
                 }
             }
 
-            override fun onFailure(call: Call<UserResponse>, t: Throwable) {
-                Log.e("Error: ", "onFailure : ${t.message}")
+            override fun onFailure(call: Call<GantiProfileNameResponse>, t: Throwable) {
+                Log.e("Error: ", "dfdgd : ${t.message}")
+            }
+
+        })
+    }
+    private var livePutPassword: MutableLiveData<GantiPasswordResponse> = MutableLiveData()
+    var dataPassword: LiveData<GantiPasswordResponse> = livePutPassword
+    fun patchUser(userId: String, password: String, newPassword: String) {
+        Client.putGantiPassword(userId, password, newPassword).enqueue(object : Callback<GantiPasswordResponse> {
+            override fun onResponse(call: Call<GantiPasswordResponse>, response: Response<GantiPasswordResponse>) {
+                if (response.isSuccessful) {
+                    livePutPassword.postValue(response.body()!!)
+                } else {
+                    Log.e("Error", "onFailure: ${response.body()?.message}")
+                }
+            }
+
+            override fun onFailure(call: Call<GantiPasswordResponse>, t: Throwable) {
+                Log.e("Error: ", "dfdgd : ${t.message}")
             }
 
         })
@@ -55,6 +71,7 @@ class UserViewModel @Inject constructor(private val Client:RestfulApi): ViewMode
 
         })
     }
+
 
     //Untuk mengatur Login Response Api
     private var liveDataLogin: MutableLiveData<LoginUserResponse> = MutableLiveData()

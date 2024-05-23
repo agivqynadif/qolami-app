@@ -29,13 +29,17 @@ class LatihanHurufAdapter (var dataHuruf: ArrayList<DataLatihanHuruf>):RecyclerV
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        var angka = position
+
         Glide.with(holder.itemView).load(dataHuruf[position].logo).into(holder.binding.imageLogoLatihan)
         holder.binding.textLatihan.text = dataHuruf[position].latihan
         holder.binding.textPenjelasan.text = dataHuruf[position].penjelesan
         holder.binding.btnDetil.setOnClickListener {
+            angka++
             val bundle = Bundle()
-            bundle.putString("latihan", dataHuruf[position].latihan)
-            it.findNavController().navigate(R.id.action_fragmentLatihanHuruf_to_fragmentDetailLatihanHuruf, bundle)
+            bundle.putString("latihan", dataHuruf[position].latihan + " " + angka)
+            it.findNavController()
+                .navigate(R.id.action_fragmentLatihanHuruf_to_fragmentDetailLatihanHuruf, bundle)
         }
     }
 

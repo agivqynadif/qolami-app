@@ -39,7 +39,7 @@ class FragmentDetailLatihanHuruf : Fragment() {
         sharedPreferences2 = requireContext().getSharedPreferences("LOGIN", Context.MODE_PRIVATE)
         scoreViewModel = ViewModelProvider(this).get(ScoreViewModel::class.java)
         binding.imageBack.setOnClickListener {
-            findNavController().navigate(R.id.action_fragmentDetailLatihanHuruf_to_fragmentLatihanHuruf)
+            findNavController().navigateUp()
         }
         val latihan = this.arguments?.getString("latihan")
         val judulLatihan = this.arguments?.getString("judulLatihan")

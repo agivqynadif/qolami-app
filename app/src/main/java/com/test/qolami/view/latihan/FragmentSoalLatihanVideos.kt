@@ -239,6 +239,7 @@ class FragmentSoalLatihanVideos : Fragment() {
 
     fun lanjutSoal(){
         indexTerkini ++
+        indexYangDipilih = 0
         if (binding.textPelajaran.text == "Latihan 2") {
             if (checkJumlahSoal() == true) {
                 latihanHurufViewModel.dataSoalVideosFathah.observe(viewLifecycleOwner) {

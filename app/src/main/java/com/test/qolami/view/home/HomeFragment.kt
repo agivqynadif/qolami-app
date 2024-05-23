@@ -4,15 +4,15 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.test.qolami.R
 import com.test.qolami.databinding.FragmentHomeBinding
+import com.test.qolami.view.account.PopUpAkunFragment
 import com.test.qolami.view.home.PopUpFragment
 import com.test.qolami.viewnodel.UserViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -25,7 +25,7 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(layoutInflater, container, false)
         return binding.root
@@ -47,7 +47,12 @@ class HomeFragment : Fragment() {
             checkSudahLogin()
         }
         binding.imageView.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_akunFragment)
+            if (getToken.isEmpty()) {
+                val popUpAkun = PopUpAkunFragment()
+                popUpAkun.show(childFragmentManager,"popupakun")
+            }else {
+                findNavController().navigate(R.id.action_homeFragment_to_akunFragment)
+            }
         }
     }
     private fun checkSudahLogin(){
@@ -65,6 +70,8 @@ class HomeFragment : Fragment() {
         }
 
     }
+
+
 
 
 }

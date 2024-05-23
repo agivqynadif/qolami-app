@@ -43,7 +43,7 @@ class FragmentSoalLatihanImage : Fragment() {
         binding.backImg.setOnClickListener {
             findNavController().navigateUp()
         }
-
+        Log.i("Index yang di pilih", "$indexYangDipilih")
         sharedPreferences = requireContext().getSharedPreferences("judul", Context.MODE_PRIVATE)
         val textJudul = sharedPreferences.getString("latihan", "")
         latihanHurufViewModel = ViewModelProvider(this).get(LatihanHurufViewModel::class.java)
@@ -82,6 +82,7 @@ class FragmentSoalLatihanImage : Fragment() {
                 jumlahSalah++
                 Log.e("info", "$jumlahSalah")
             }
+            Log.i("Index yang di pilih", "$indexYangDipilih")
             showBottomSheetDialog()
         }
     }
@@ -191,6 +192,7 @@ class FragmentSoalLatihanImage : Fragment() {
     }
     fun lanjutkanSoal(){
         indexTerkini ++
+        indexYangDipilih = 0
         if (checkSoalSelesai() == true){
             if (binding.textPelajaran.text == "Latihan 1"){
                 latihanHurufViewModel.dataSoalImage.observe(viewLifecycleOwner) {

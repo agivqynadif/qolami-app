@@ -28,10 +28,19 @@ interface RestfulApi {
         @Field("newPassword") newPassword:String,
         @Field("repeatNewPassword") repeatNewPassword:String
     ): Call<LupaPasswordResponse>
-    @GET("user/{userId}")
-    fun getUser(
-        @Path ("userId") userId:String
-    ):Call<UserResponse>
+    @FormUrlEncoded
+    @PUT("user/reset-password/{id}")
+    fun putGantiPassword(
+        @Path("id") id:String,
+        @Field("newPassword") newPassword: String,
+        @Field("repeatNewPassword")repeatNewPassword: String
+    ):Call<GantiPasswordResponse>
+    @FormUrlEncoded
+    @PATCH("user/profile-name/{userId}")
+    fun patchUser(
+        @Path("userId") userId: String,
+        @Field("profileName") profileName:String
+    ):Call<GantiProfileNameResponse>
     @GET("images-practice/hijaiyah")
     fun getSoalImage(): Call<BankSoalImageResponse>
     @GET("images-practice/fathah")

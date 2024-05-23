@@ -1,19 +1,27 @@
 package com.test.qolami
 
+import android.content.Context
+import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import androidx.activity.addCallback
 import androidx.fragment.app.FragmentManager
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.test.qolami.view.HomeFragment
+import com.test.qolami.view.home.PopUpFragment
+import com.test.qolami.view.latihan.FragmentLatihan
+import com.test.qolami.view.pelajaran.PelajaranFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
-
+    lateinit var sharedPreferences: SharedPreferences
     lateinit var navController: NavController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,16 +34,17 @@ class MainActivity : AppCompatActivity() {
         val bottomNavView = findViewById<BottomNavigationView>(R.id.bottomnav)
         //navcontroler,nacdestination,bundle
         navController.addOnDestinationChangedListener { navcontroler, destination, bundle ->
-
             when (destination.id) {
-                R.id.homeFragment, R.id.pelajaranFragment, R.id.fragmentLatihan ->  {
+                R.id.homeFragment, R.id.pelajaranFragment, R.id.fragmentLatihan -> {
                     bottomNavView.visibility = View.VISIBLE
                 }
                 else -> {
                     bottomNavView.visibility = View.GONE
                 }
             }
+            updateBottomNavigationItem(destination.id)
         }
+        navController.currentDestination
         NavigationUI.setupWithNavController(bottomNavView, navController)
         bottomNavView.setOnItemSelectedListener { menuItem ->
             when(menuItem.itemId){
@@ -48,8 +57,17 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.latihan -> {
-                    navController.navigate(R.id.fragmentLatihan)
-                    true
+                    sharedPreferences = getSharedPreferences("LOGIN", Context.MODE_PRIVATE)
+                    var token = sharedPreferences.getString("token", "")
+                    Log.i("token", "$token")
+                    if (token!!.isNotEmpty()) {
+                        navController.navigate(R.id.fragmentLatihan)
+                        true
+                    }else{
+                        val popUpFragment = PopUpFragment()
+                        popUpFragment.show(getSupportFragmentManager(),"popupfragment")
+                        true
+                    }
                 }
                 else -> false
             }
@@ -57,10 +75,24 @@ class MainActivity : AppCompatActivity() {
             true // Mengembalikan true menandakan bahwa aksi telah ditangani
         }
 
-        bottomNavView.menu.getItem(0).isChecked = true
+
+
     }
-    fun clearBackStackInclusive(tag: String?) {
-        supportFragmentManager.popBackStack(tag, FragmentManager.POP_BACK_STACK_INCLUSIVE)
+    fun updateBottomNavigationItem(destinationId: Int?) {
+        destinationId ?: return // Jika destinationId null, kembalikan
+
+        // Mengatur item bottom navigation berdasarkan destinationId
+        when (destinationId) {
+            R.id.homeFragment -> findViewById<BottomNavigationView>(R.id.bottomnav).menu.getItem(0).isChecked =
+                true
+            R.id.pelajaranFragment -> findViewById<BottomNavigationView>(R.id.bottomnav).menu.getItem(
+                1
+            ).isChecked = true
+            R.id.fragmentLatihan -> findViewById<BottomNavigationView>(R.id.bottomnav).menu.getItem(
+                2
+            ).isChecked = true
+        }
     }
+
 
 }

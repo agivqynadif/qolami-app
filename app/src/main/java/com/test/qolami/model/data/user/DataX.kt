@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
 data class DataX(
     @SerializedName("_id")
     val _id: String,
-    @SerializedName("username")
+    @SerializedName("profileName")
     val username:String,
     @SerializedName("token")
     val token: String

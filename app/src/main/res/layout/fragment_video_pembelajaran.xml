@@ -149,10 +149,9 @@
             android:id="@+id/frameLayout"
             android:layout_width="150dp"
             android:layout_height="150dp"
+            android:layout_marginStart="200dp"
             android:background="@drawable/shape_bg_pelajaran_video"
-
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/detail"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
@@ -168,7 +167,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/montserrat_regular"
-            android:text="Warna Hitam merupakan \n huruf Ba dan yang berwarna \n biru terang adalah harakat Fathah."
+            android:text="Warna Hitam merupakan \n huruf Ba dan yang berwarna \n biru terang adalah harakat \nFathah."
             android:textColor="@color/black"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="parent"

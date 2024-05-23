@@ -31,6 +31,9 @@ class AkunFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         sharedPreferences = requireContext().getSharedPreferences("LOGIN", Context.MODE_PRIVATE)
         token  = sharedPreferences.getString("token", " ").toString()
+        binding.ivBack.setOnClickListener {
+            findNavController().navigateUp()
+        }
         if (token.isNotEmpty()){
             binding.llProfile.setOnClickListener {
                 findNavController().navigate(R.id.action_akunFragment_to_profileFragment)

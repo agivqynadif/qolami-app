@@ -20,10 +20,10 @@ import javax.inject.Inject
 @HiltViewModel
 class LatihanHurufViewModel @Inject constructor(private val Client: RestfulApi) : ViewModel() {
     val listData = arrayListOf(
-        DataLatihanHuruf(R.drawable.img_hijaiyah, "Latihan 1","Huruf Hijaiyah"),
-        DataLatihanHuruf(R.drawable.img_fathah, "Latihan 2","Huruf Berharakat Fathah"),
-        DataLatihanHuruf(R.drawable.img_kasroh, "Latihan 3","Huruf Berharakat Kasrah"),
-        DataLatihanHuruf(R.drawable.img_dhammah, "Latihan 4","Huruf Berharakat Dhammah"),
+        DataLatihanHuruf(R.drawable.img_hijaiyah, "Latihan","Huruf Hijaiyah"),
+        DataLatihanHuruf(R.drawable.img_fathah, "Latihan","Huruf Berharakat Fathah"),
+        DataLatihanHuruf(R.drawable.img_kasroh, "Latihan","Huruf Berharakat Kasrah"),
+        DataLatihanHuruf(R.drawable.img_dhammah, "Latihan","Huruf Berharakat Dhammah"),
         /*DataPelajaranHuruf(R.drawable.img_fathahtain, "Pelajaran 5","Huruf Berharakat Fathahtain"),
         DataPelajaranHuruf(R.drawable.img_kasrahtain, "Pelajaran 6","Huruf Berharakat Kasrahtain"),
         DataPelajaranHuruf(R.drawable.dhammahtain, "Pelajaran 7","Huruf Berharakat Dhammahtain"),

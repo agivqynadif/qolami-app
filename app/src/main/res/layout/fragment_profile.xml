@@ -25,6 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
         android:layout_marginTop="24dp"
+
         android:fontFamily="@font/nunito_extrabold"
         android:text="Profil"
         android:textColor="@color/warna_hijau_tua"
@@ -54,8 +55,7 @@
         android:layout_marginStart="24sp"
         android:layout_height="wrap_content"
         app:boxBackgroundMode="none"
-        android:layout_marginTop="5dp"
-        app:hintEnabled="false">
+        android:layout_marginTop="5dp">
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/et_namalengkap"
@@ -63,6 +63,7 @@
         android:layout_height="wrap_content"
         android:background="@drawable/rounded_bg"
         android:hint="Nama Lengkap"
+        android:enabled="false"
         android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
