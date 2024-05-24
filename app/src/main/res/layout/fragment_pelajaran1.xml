@@ -47,7 +47,7 @@
             android:layout_marginTop="36dp"
             app:cardCornerRadius="15dp"
             app:cardElevation="10dp"
-
+            app:cardBackgroundColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/text_pelajaran">
@@ -78,7 +78,7 @@
             android:layoutDirection="rtl"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-        </androidx.constraintlayout.widget.ConstraintLayout>/
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
