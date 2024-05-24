@@ -109,7 +109,7 @@
                 android:textSize="40sp"
                 app:icon="@drawable/baseline_menu_book_24"
                 android:backgroundTint="@color/warna_hijau_tua"
-                android:text="Quiz"
+                android:text="Kuis"
                 app:cornerRadius="40dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

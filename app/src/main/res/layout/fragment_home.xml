@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/warna_bg">
+    android:background="@color/warna_bg"
+    tools:context=".view.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -104,7 +105,7 @@
                 app:iconGravity="textStart"
                 app:icon="@drawable/baseline_menu_book_24"
                 android:backgroundTint="@color/warna_hijau_tua"
-                android:text="Quiz"
+                android:text="Kuis"
                 app:cornerRadius="40dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
