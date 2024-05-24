@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/warna_bg"
-    tools:context=".view.home.HomeFragment">
+    android:background="@color/warna_bg">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -74,7 +73,7 @@
                 android:layout_marginTop="150dp"
                 android:backgroundTint="@color/warna_hijau_tua"
                 android:text="Pelajaran"
-                android:textSize="24sp"
+
                 app:cornerRadius="40dp"
                 app:layout_constraintBottom_toTopOf="@+id/button_Latihan"
                 app:layout_constraintEnd_toEndOf="parent"
