@@ -88,7 +88,6 @@ class VideoPembelajaranFragment : Fragment() {
                 binding.textPenjelasan.text = "Perhatikan Tulisan \nberikut!"
                 binding.detail.text = data1[i].detail
                 Glide.with(this).load(data1[i].gambar).into(binding.gambarPelajaran)
-                binding.frameLayout.setBackgroundResource(R.drawable.shape_bg_pembelajaran_hijaiyah)
             }
         }
     }
