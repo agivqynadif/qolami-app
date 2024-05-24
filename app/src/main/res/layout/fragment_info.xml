@@ -47,8 +47,8 @@
 
         <ImageView
             android:id="@+id/logoqolami"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_marginStart="106dp"
             android:layout_marginTop="24dp"
             android:layout_marginEnd="106dp"
@@ -78,11 +78,12 @@
             android:layout_gravity="start"
             android:fontFamily="@font/nunito_semibold"
             android:lineSpacingExtra="-2dp"
-            android:text="Qolami Project adalah aplikasi yang bertujuan sebagai pembelajaran bahasa arab yang menggunakan Metode Qolami, karena metode Qolami itu sendiri belum pernah di pakai oleh pihak manapun sehingga membuat kami sebagai pengembangan aplikasi perangkat lunak menuangkan metodi Qolami ini kedalam suatu aplikasi, Sedangkan dari sisi pengguna aplikasi ini bertujuan untuk menjadikan aplikasi sebagai bentuk media pembelajaran dari berbagai usia bahkan bisa digunakan untuk para Guru agama untuk mengajari murid nya dengan mengenal metode Qolami ini. Metode Qolami juga dikenal dapat diartikan secara KBBI adalah Menulis dengan metode ini Qolami juga berbeda dengan metode yang lainya pastinya Maka dari itu kami sebagai Developer ingin menuangkan Metode ini kedalam Aplikasi berbentuk Mobile karena akan mudah diakses untuk semua pengguna."
+            android:text="Qolami Project adalah aplikasi pembelajaran bahasa Arab yang menggunakan Metode Qolami. Aplikasi ini dirancang untuk semua usia dan dapat digunakan oleh guru agama untuk mengajarkan bahasa Arab kepada murid-muridnya. Metode Qolami menawarkan pendekatan yang berbeda dari metode lainnya. Sebagai pengembang, kami membuat aplikasi ini dalam bentuk mobile agar mudah diakses oleh semua pengguna."
             android:textAlignment="textStart"
             android:textColor="@android:color/black"
             app:layout_constraintTop_toBottomOf="@id/text_qolami" />
         <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_marginTop="12dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
@@ -97,7 +98,6 @@
             android:fontFamily="@font/nunito_extrabold"
             android:text="Tim Pengembang"
             android:textColor="@color/black"
-            android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -128,11 +128,10 @@
             android:id="@+id/tv_pengembang_baru"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="38dp"
+            android:layout_marginTop="20dp"
             android:fontFamily="@font/nunito_extrabold"
             android:text="Tim Pengembang"
             android:textColor="@color/black"
-            android:textSize="20sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_nama_tim_indomitable" />
 
@@ -161,10 +160,10 @@
 
         <ImageView
             android:id="@+id/iv_character"
-            android:layout_width="150dp"
-            android:layout_height="200dp"
+            android:layout_width="100dp"
+            android:layout_height="150dp"
             android:layout_marginStart="24dp"
-
+            android:layout_marginTop="20dp"
             android:src="@drawable/char4"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tv_nama_tim_indomitable"
@@ -174,22 +173,20 @@
             android:id="@+id/tv_ikuti_kami"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:layout_marginTop="8dp"
             android:fontFamily="@font/nunito_extrabold"
             android:gravity="center"
             android:text="Ikuti Kami"
             android:textColor="@color/black"
 
-            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/tv_nama_tim_sofun"
             app:layout_constraintTop_toBottomOf="@id/iv_character" />
 
         <ImageView
             android:id="@+id/iv_tiktok"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
             android:layout_marginStart="32dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="30dp"
@@ -200,8 +197,8 @@
 
         <ImageView
             android:id="@+id/iv_youtube"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
             android:layout_marginTop="8dp"
             android:layout_marginStart="30dp"
             android:src="@drawable/ic_youtube"
