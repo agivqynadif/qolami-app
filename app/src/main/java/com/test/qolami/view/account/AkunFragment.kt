@@ -46,6 +46,9 @@ class AkunFragment : Fragment() {
                 findNavController().navigate(R.id.action_akunFragment_to_homeFragment)
             }
         }
+        binding.llSettings.setOnClickListener{
+            findNavController().navigate(R.id.action_akunFragment_to_fragmentInfo)
+        }
     }
 
 

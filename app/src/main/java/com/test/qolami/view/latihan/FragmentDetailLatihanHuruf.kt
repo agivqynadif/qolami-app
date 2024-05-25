@@ -158,6 +158,15 @@ class FragmentDetailLatihanHuruf : Fragment() {
                 findNavController().navigate(R.id.action_fragmentDetailLatihanHuruf_to_fragmentSoalLatihanVideos)
             }
         }
+        binding.ivLatihanAudio.setOnClickListener {
+            if(latihan != null){
+                sharedPreferences.edit().putString("latihanAudio", latihan).apply()
+                findNavController().navigate(R.id.action_fragmentDetailLatihanHuruf_to_fragmentSoalLatihanAudio)
+            }else{
+                sharedPreferences.edit().putString("latihanAudio", judulLatihan).apply()
+                findNavController().navigate(R.id.action_fragmentDetailLatihanHuruf_to_fragmentSoalLatihanAudio)
+            }
+        }
     }
 
 

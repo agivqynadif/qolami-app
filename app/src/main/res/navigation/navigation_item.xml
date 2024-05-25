@@ -177,6 +177,9 @@
         <action
             android:id="@+id/action_fragmentDetailLatihanHuruf_to_fragmentSoalLatihanVideos"
             app:destination="@id/fragmentSoalLatihanVideos" />
+        <action
+            android:id="@+id/action_fragmentDetailLatihanHuruf_to_fragmentSoalLatihanAudio"
+            app:destination="@id/fragmentSoalLatihanAudio" />
     </fragment>
     <fragment
         android:id="@+id/fragmentSoalLatihanImage"
@@ -255,7 +258,13 @@
         android:id="@+id/fragmentInfo"
         android:name="com.test.qolami.view.info.FragmentInfo"
         android:label="fragment_info"
-        tools:layout="@layout/fragment_info" />
+        tools:layout="@layout/fragment_info" >
+        <action
+            android:id="@+id/action_fragmentInfo_to_akunFragment"
+            app:destination="@id/akunFragment"
+            app:popUpTo="@id/fragmentInfo"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/resetPasswordFragment"
         android:name="com.test.qolami.view.user.ResetPasswordFragment"
@@ -263,6 +272,13 @@
         tools:layout="@layout/fragment_reset_password" >
         <action
             android:id="@+id/action_resetPasswordFragment_to_akunFragment"
-            app:destination="@id/akunFragment" />
+            app:destination="@id/akunFragment"
+            app:popUpTo="@id/resetPasswordFragment"
+            app:popUpToInclusive="true" />
     </fragment>
+    <fragment
+        android:id="@+id/fragmentSoalLatihanAudio"
+        android:name="com.test.qolami.view.latihan.FragmentSoalLatihanAudio"
+        android:label="fragment_soal_latihan_audio"
+        tools:layout="@layout/fragment_soal_latihan_audio" />
 </navigation>

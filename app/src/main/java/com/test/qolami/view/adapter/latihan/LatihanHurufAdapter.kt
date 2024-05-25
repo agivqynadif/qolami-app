@@ -11,8 +11,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.test.qolami.R
 import com.test.qolami.databinding.DataLatihanHurufBinding
+import com.test.qolami.view.latihan.DataLatihanHuruf
 
-import com.test.qolami.view.latihan.data.DataLatihanHuruf
 
 class LatihanHurufAdapter (var dataHuruf: ArrayList<DataLatihanHuruf>):RecyclerView.Adapter<LatihanHurufAdapter.ViewHolder>() {
     class ViewHolder(var binding: DataLatihanHurufBinding): RecyclerView.ViewHolder(binding.root) {
@@ -33,7 +33,7 @@ class LatihanHurufAdapter (var dataHuruf: ArrayList<DataLatihanHuruf>):RecyclerV
 
         Glide.with(holder.itemView).load(dataHuruf[position].logo).into(holder.binding.imageLogoLatihan)
         holder.binding.textLatihan.text = dataHuruf[position].latihan
-        holder.binding.textPenjelasan.text = dataHuruf[position].penjelesan
+        holder.binding.textPenjelasan.text = dataHuruf[position].penjelasan
         holder.binding.btnDetil.setOnClickListener {
             angka++
             val bundle = Bundle()

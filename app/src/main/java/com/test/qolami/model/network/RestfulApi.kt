@@ -1,13 +1,11 @@
 package com.test.qolami.model.network
 
-import com.test.qolami.model.data.latihan.BankSoalImageResponse
-import com.test.qolami.model.data.latihan.BankSoalVideoResponse
-import com.test.qolami.model.data.latihan.DataSoalDhammah
-import com.test.qolami.model.data.latihan.DataSoalKasrah
+import com.test.qolami.model.data.latihan.*
 import com.test.qolami.model.data.score.GetScoreResponse
 import com.test.qolami.model.data.score.ScoreResponse
 import com.test.qolami.model.data.score.UserId
 import com.test.qolami.model.data.user.*
+import com.test.qolami.model.data.user.Data
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -56,6 +54,8 @@ interface RestfulApi {
     fun getSoalVideosKasrah(): Call<DataSoalKasrah>
     @GET("videos-practice/dhammah")
     fun getSoalVideosDhammah(): Call<DataSoalDhammah>
+    @GET("audios-practice/hijaiyah")
+    fun getSoalAudioHijaiyah(): Call<BankSoalAudioResponse>
     @PATCH("user/score/{userId}")
     fun patchScore(
         @Path ("userId") userId: String,

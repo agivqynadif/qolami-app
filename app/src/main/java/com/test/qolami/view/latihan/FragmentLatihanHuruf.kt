@@ -10,7 +10,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.test.qolami.databinding.FragmentLatihanHurufBinding
 import com.test.qolami.view.adapter.latihan.LatihanHurufAdapter
-import com.test.qolami.view.latihan.data.DataLatihanHuruf
+
 import com.test.qolami.viewnodel.LatihanHurufViewModel
 import dagger.hilt.android.AndroidEntryPoint
 

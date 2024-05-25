@@ -68,6 +68,8 @@ dependencies {
     kapt "com.google.dagger:hilt-android-compiler:2.44"
     //youtube Player Dependency
     implementation 'com.pierfrancescosoffritti.androidyoutubeplayer:core:12.1.0'
+    //exo player dependency
+    implementation 'com.google.android.exoplayer:exoplayer:2.16.1'
 }
 kapt {
     correctErrorTypes true

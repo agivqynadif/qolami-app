@@ -10,7 +10,7 @@ import com.test.qolami.R
 
 import com.test.qolami.model.data.latihan.*
 import com.test.qolami.model.network.RestfulApi
-import com.test.qolami.view.latihan.data.DataLatihanHuruf
+import com.test.qolami.view.latihan.DataLatihanHuruf
 import dagger.hilt.android.lifecycle.HiltViewModel
 import retrofit2.Call
 import retrofit2.Callback
@@ -171,6 +171,26 @@ class LatihanHurufViewModel @Inject constructor(private val Client: RestfulApi) 
             }
 
             override fun onFailure(call: Call<DataSoalDhammah>, t: Throwable) {
+                Log.e("Error: ", "onFailure : ${t.message}")
+            }
+
+        })
+    }
+    private var liveDataSoalAudioHijaiyah: MutableLiveData<DataXXXX> = MutableLiveData()
+    val dataSoalAudioHijaiyah: LiveData<DataXXXX> get() = liveDataSoalAudioHijaiyah
+    fun getSoalAudiHijaiyah() {
+        Client.getSoalAudioHijaiyah().enqueue(object : Callback<BankSoalAudioResponse> {
+            override fun onResponse(call: Call<BankSoalAudioResponse>, response: Response<BankSoalAudioResponse>) {
+                if (response.isSuccessful) {
+                    liveDataSoalAudioHijaiyah.postValue(response.body()!!.data)
+
+                } else {
+                    liveDataSoalAudioHijaiyah.postValue(null)
+                    Log.e("Error", "onFailure: Error")
+                }
+            }
+
+            override fun onFailure(call: Call<BankSoalAudioResponse>, t: Throwable) {
                 Log.e("Error: ", "onFailure : ${t.message}")
             }
 
