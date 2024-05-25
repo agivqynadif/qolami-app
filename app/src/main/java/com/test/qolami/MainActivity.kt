@@ -17,6 +17,7 @@ import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.NavigationUI
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.test.qolami.view.HomeFragment
+import com.test.qolami.view.account.PopUpAkunFragment
 import com.test.qolami.view.home.PopUpFragment
 import com.test.qolami.view.latihan.FragmentLatihan
 import com.test.qolami.view.pelajaran.PelajaranFragment
@@ -70,9 +71,9 @@ class MainActivity : AppCompatActivity() {
                         navController.navigate(R.id.fragmentLatihan)
                         true
                     }else{
-                        val popUpFragment = PopUpFragment()
+                        val popUpFragment = PopUpAkunFragment()
                         popUpFragment.show(getSupportFragmentManager(),"popupfragment")
-                        true
+                        false
                     }
                 }
                 else -> false
