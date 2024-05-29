@@ -48,6 +48,9 @@ class LoginFragment : Fragment() {
             login()
 
         }
+        binding.textMasuktanpalogin.setOnClickListener {
+            findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+        }
     }
     //untuk variable menentukan masuk ke else username benar dan password salah
     private var isPositiveResponseReceived = false

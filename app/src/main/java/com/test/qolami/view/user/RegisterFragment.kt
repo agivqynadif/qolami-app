@@ -40,6 +40,9 @@ class RegisterFragment : Fragment() {
         binding.buttonDaftar.setOnClickListener {
             register()
         }
+        binding.tvNavigateToLogin.setOnClickListener {
+            findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
+        }
     }
     private  fun register(){
         val namaLengkap = binding.etNamalengkap.text.toString()

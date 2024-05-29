@@ -59,6 +59,9 @@ class OnBoardingMangerFragment : Fragment() {
                 findNavController().navigate(R.id.action_onBoardingMangerFragment_to_homeFragment)
             }
         }
+        binding.txtMasuk.setOnClickListener {
+            findNavController().navigate(R.id.action_onBoardingMangerFragment_to_homeFragment)
+        }
     }
     private fun finishedOnboarding(){
         val sharedPref = requireActivity().getSharedPreferences("onBoarding", Context.MODE_PRIVATE)
