@@ -35,7 +35,7 @@ class FragmentLatihan : Fragment() {
             val popUpFiturFragment = PopUpFiturSedangDikembankanFragment()
             popUpFiturFragment.show(childFragmentManager, "popupfitur")
         }
-        binding.btnHuruf.setOnClickListener {
+        binding.btnRangkaian.setOnClickListener {
             val popUpFiturFragment = PopUpFiturSedangDikembankanFragment()
             popUpFiturFragment.show(childFragmentManager, "popupfitur")
         }

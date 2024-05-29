@@ -85,6 +85,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
                 R.id.Quiz -> {
+                    false
                     val popUpFiturFragment = PopUpFiturSedangDikembankanFragment()
                     popUpFiturFragment.show(getSupportFragmentManager(), "popupfitur")
                 }
