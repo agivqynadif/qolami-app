@@ -11,6 +11,7 @@ import android.view.Window
 import android.view.WindowManager
 import androidx.activity.addCallback
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.fragment.app.FragmentManager
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -34,6 +35,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         supportActionBar?.hide()
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.fragmentContainerView4) as NavHostFragment
         navController = navHostFragment.navController
