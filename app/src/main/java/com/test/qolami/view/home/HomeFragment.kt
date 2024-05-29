@@ -49,6 +49,7 @@ class HomeFragment : Fragment() {
         binding.imageView.setOnClickListener {
             if (getToken.isEmpty()) {
                 val popUpAkun = PopUpAkunFragment()
+                popUpAkun.isCancelable = false
                 popUpAkun.show(childFragmentManager,"popupakun")
             }else {
                 findNavController().navigate(R.id.action_homeFragment_to_akunFragment)

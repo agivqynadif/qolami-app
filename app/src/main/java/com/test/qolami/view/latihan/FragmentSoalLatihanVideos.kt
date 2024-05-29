@@ -71,6 +71,8 @@ class FragmentSoalLatihanVideos : Fragment() {
             selectedOption(3, binding.txtJawaban4, binding.option4)
         }
         when(binding.textPelajaran.text){
+            "Latihan 1" ->
+                setSoal1()
             "Latihan 2" ->
                 setSoal2()
             "Latihan 3" ->
@@ -89,7 +91,37 @@ class FragmentSoalLatihanVideos : Fragment() {
             showBottomSheetDialog()
         }
     }
+    private fun setSoal1(){
+        latihanHurufViewModel.getSoalVideoHijaiyah()
+        latihanHurufViewModel.dataSoalVideosHijaiyah.observe(viewLifecycleOwner){
+            title = it.latihanHijaiyahVideo[indexTerkini - 1].title
+            subtitle = it.latihanHijaiyahVideo[indexTerkini - 1].subtitle
+            binding.textJudul.text = it.latihanHijaiyahVideo[indexTerkini - 1].subtitle
+            youTubePlayerView.addYouTubePlayerListener(object : AbstractYouTubePlayerListener(){
+                override fun onReady(youTubePlayer: YouTubePlayer) {
+                    this@FragmentSoalLatihanVideos.youTubePlayer = youTubePlayer
+                    this@FragmentSoalLatihanVideos.youTubePlayer?.cueVideo(it.latihanHijaiyahVideo[indexTerkini-1].videoId, 0f)
+                }
 
+                override fun onStateChange(
+                    youTubePlayer: YouTubePlayer,
+                    state: PlayerConstants.PlayerState
+                ) {
+                    if (state == PlayerConstants.PlayerState.ENDED)
+                        binding.btnPly.visibility= View.VISIBLE
+                }
+            })
+            binding.btnPly.setOnClickListener {
+                youTubePlayer?.play()
+                binding.btnPly.visibility = View.INVISIBLE
+            }
+            binding.txtJawaban1.text = it.latihanHijaiyahVideo[indexTerkini - 1].options[0]
+            binding.txtJawaban2.text = it.latihanHijaiyahVideo[indexTerkini - 1].options[1]
+            binding.txtJawaban3.text = it.latihanHijaiyahVideo[indexTerkini - 1].options[2]
+            binding.txtJawaban4.text = it.latihanHijaiyahVideo[indexTerkini - 1].options[3]
+        }
+        defaultStyle()
+    }
     private fun setSoal2(){
         latihanHurufViewModel.getSoalVideoFathah()
         latihanHurufViewModel.dataSoalVideosFathah.observe(viewLifecycleOwner){
@@ -233,6 +265,14 @@ class FragmentSoalLatihanVideos : Fragment() {
                     indikator = false
                 }
             }
+        }else if (binding.textPelajaran.text == "Latihan 1"){
+            latihanHurufViewModel.dataSoalVideosHijaiyah.observe(viewLifecycleOwner){
+                if (indexYangDipilih == it.latihanHijaiyahVideo[indexTerkini - 1].correctIndex) {
+                    indikator = true
+                } else {
+                    indikator = false
+                }
+            }
         }
         return  indikator
     }
@@ -276,6 +316,18 @@ class FragmentSoalLatihanVideos : Fragment() {
                     binding.txtJawaban4.text = it.latihanDhammahVideo[indexTerkini - 1].options[3]
                 }
             }
+        }else if(binding.textPelajaran.text == "Latihan 1") {
+            if (checkJumlahSoal() == true) {
+                latihanHurufViewModel.dataSoalVideosHijaiyah.observe(viewLifecycleOwner) {
+                    binding.textJudul.text = it.latihanHijaiyahVideo[indexTerkini - 1].subtitle
+                    youTubePlayer?.cueVideo(it.latihanHijaiyahVideo[indexTerkini - 1].videoId, 0f)
+                    Log.i("yt", it.latihanHijaiyahVideo[indexTerkini - 1].videoId)
+                    binding.txtJawaban1.text = it.latihanHijaiyahVideo[indexTerkini - 1].options[0]
+                    binding.txtJawaban2.text = it.latihanHijaiyahVideo[indexTerkini - 1].options[1]
+                    binding.txtJawaban3.text = it.latihanHijaiyahVideo[indexTerkini - 1].options[2]
+                    binding.txtJawaban4.text = it.latihanHijaiyahVideo[indexTerkini - 1].options[3]
+                }
+            }
         }
         defaultStyle()
     }
@@ -285,8 +337,8 @@ class FragmentSoalLatihanVideos : Fragment() {
         val bundle = Bundle()
         bundle.putInt("JumlahBenarVideos", jumlahBenarVideos)
         bundle.putInt("JumlahSalahVideos", jumlahSalahVideos)
-        bundle.putString("title", title)
-        bundle.putString("subtitle", subtitle)
+        bundle.putString("titleVideos", title)
+        bundle.putString("subtitleVideos", subtitle)
         if(binding.textPelajaran.text == "Latihan 2") {
             latihanHurufViewModel.dataSoalVideosFathah.observe(viewLifecycleOwner) {
                 if (indexTerkini > it.latihanFathahVideo.size) {
@@ -314,6 +366,17 @@ class FragmentSoalLatihanVideos : Fragment() {
         }else if (binding.textPelajaran.text == "Latihan 4"){
             latihanHurufViewModel.dataSoalVideosDhammah.observe(viewLifecycleOwner) {
                 if (indexTerkini > it.latihanDhammahVideo.size) {
+                    indikatorCheck = false
+                    findNavController().navigate(
+                        R.id.action_fragmentSoalLatihanVideos_to_fragmentHasilLatihanVideos, bundle
+                    )
+                } else {
+                    indikatorCheck = true
+                }
+            }
+        }else if (binding.textPelajaran.text == "Latihan 1"){
+            latihanHurufViewModel.dataSoalVideosHijaiyah.observe(viewLifecycleOwner) {
+                if (indexTerkini > it.latihanHijaiyahVideo.size) {
                     indikatorCheck = false
                     findNavController().navigate(
                         R.id.action_fragmentSoalLatihanVideos_to_fragmentHasilLatihanVideos, bundle

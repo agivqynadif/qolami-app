@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.test.qolami.R
 import com.test.qolami.databinding.FragmentLatihanHurufBinding
 import com.test.qolami.view.adapter.latihan.LatihanHurufAdapter
 
@@ -33,7 +34,7 @@ class FragmentLatihanHuruf : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.imageBack.setOnClickListener {
-            findNavController().navigateUp()
+            findNavController().navigate(R.id.action_fragmentLatihanHuruf_to_fragmentLatihan)
         }
         layoutData()
     }

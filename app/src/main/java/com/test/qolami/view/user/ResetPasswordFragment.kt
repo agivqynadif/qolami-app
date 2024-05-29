@@ -40,7 +40,7 @@ class ResetPasswordFragment : Fragment() {
             findNavController().navigateUp()
         }
         binding.buttonSimpan.setOnClickListener {
-            userViewModel.putLupaPassword(id!!, newPassword, repeatPassword)
+            userViewModel.patchUserPassword(id!!, newPassword, repeatPassword)
             findNavController().navigateUp()
         }
     }

@@ -12,8 +12,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.test.qolami.R
 import com.test.qolami.databinding.FragmentHasilLatihanBinding
-import com.test.qolami.model.data.score.Data
-import com.test.qolami.model.data.score.ScoreRequest
 import com.test.qolami.viewnodel.ScoreViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -73,23 +71,23 @@ class FragmentHasilLatihan : Fragment() {
     private fun postScoreHijaiyah() {
         val id = sharedPreferences.getString("id", "")
         val hasilBenar = this.arguments!!.getInt("jumlahBenar") * 10
-        scoreViewModel.patchScore(id!!, Data(scoreHijaiyah = ScoreRequest(scoreImage = hasilBenar)))
+        scoreViewModel.patchScoreHijaiyahImage(id!!, hasilBenar)
     }
 
     private fun postScoreFathah(){
         val id = sharedPreferences.getString("id", "")
         val hasilBenar = this.arguments!!.getInt("jumlahBenar") * 10
-        scoreViewModel.patchScore(id!!, Data(scoreFathah = ScoreRequest(null, hasilBenar, null)))
+        scoreViewModel.patchScoreFathahImage(id!!, hasilBenar)
     }
 
     private fun postScoreKasrah(){
         val id = sharedPreferences.getString("id", "")
         val hasilBenar = this.arguments!!.getInt("jumlahBenar") * 10
-        scoreViewModel.patchScore(id!!, Data(scoreKasrah = ScoreRequest(null,scoreImage = hasilBenar, null)))
+        scoreViewModel.patchScoreKasrahImage(id!!, hasilBenar)
     }
     private fun postScoreDhammah(){
         val id = sharedPreferences.getString("id", "")
         val hasilBenar = this.arguments!!.getInt("jumlahBenar") * 10
-        scoreViewModel.patchScore(id!!, Data(scoreDhammah = ScoreRequest(null,scoreImage = hasilBenar, null)))
+        scoreViewModel.patchScoreDhammahImage(id!!, hasilBenar)
     }
 }

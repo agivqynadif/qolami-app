@@ -34,6 +34,9 @@ class RegisterFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         userVM = ViewModelProvider(this).get(UserViewModel::class.java)
         sharedPreferences = requireContext().getSharedPreferences("register", Context.MODE_PRIVATE)
+        binding.TombolBack.setOnClickListener {
+            findNavController().navigateUp()
+        }
         binding.buttonDaftar.setOnClickListener {
             register()
         }

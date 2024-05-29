@@ -5,7 +5,7 @@ import com.google.gson.annotations.SerializedName
 
 data class BankSoalAudioResponse(
     @SerializedName("data")
-    val `data`: DataXXXX,
+    val `data`: DataLatihanHijaiyahAudio,
     @SerializedName("message")
     val message: String,
     @SerializedName("status")

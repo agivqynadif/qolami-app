@@ -47,6 +47,7 @@ class ProfileFragment : Fragment() {
             var updateProfileName = binding.etNamalengkap.text.toString()
             userViewModel.patchUser(getId!!, updateProfileName!!)
             sharedPreferences.edit().putString("name", updateProfileName).apply()
+            binding.etNamalengkap.isEnabled = false
         }
     }
 

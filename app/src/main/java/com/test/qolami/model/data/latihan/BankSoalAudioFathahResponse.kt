@@ -3,9 +3,9 @@ package com.test.qolami.model.data.latihan
 
 import com.google.gson.annotations.SerializedName
 
-data class BankSoalImageResponse(
+data class BankSoalAudioFathahResponse(
     @SerializedName("data")
-    val `data`: DataLatihanHijaiyah,
+    val `data`: DataLatihanFathahAudio,
     @SerializedName("message")
     val message: String,
     @SerializedName("status")

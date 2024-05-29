@@ -35,7 +35,7 @@ class UserViewModel @Inject constructor(private val Client:RestfulApi): ViewMode
     }
     private var livePutPassword: MutableLiveData<GantiPasswordResponse> = MutableLiveData()
     var dataPassword: LiveData<GantiPasswordResponse> = livePutPassword
-    fun patchUser(userId: String, password: String, newPassword: String) {
+    fun patchUserPassword(userId: String, password: String, newPassword: String) {
         Client.putGantiPassword(userId, password, newPassword).enqueue(object : Callback<GantiPasswordResponse> {
             override fun onResponse(call: Call<GantiPasswordResponse>, response: Response<GantiPasswordResponse>) {
                 if (response.isSuccessful) {

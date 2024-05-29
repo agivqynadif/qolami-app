@@ -96,6 +96,9 @@
         <action
             android:id="@+id/action_pelajaranFragment_to_pelajaranHurufFragment"
             app:destination="@id/pelajaranHurufFragment" />
+        <action
+            android:id="@+id/action_pelajaranFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/pelajaranHurufFragment"
@@ -188,7 +191,9 @@
         tools:layout="@layout/fragment_soal_latihan_image" >
         <action
             android:id="@+id/action_fragmentSoalLatihanImage_to_fragmentHasilLatihan"
-            app:destination="@id/fragmentHasilLatihan" />
+            app:destination="@id/fragmentHasilLatihan"
+            app:popUpTo="@id/fragmentSoalLatihanImage"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_fragmentSoalLatihanImage_to_fragmentDetailLatihanHuruf"
             app:destination="@id/fragmentDetailLatihanHuruf" />
@@ -214,7 +219,9 @@
             app:destination="@id/fragmentDetailLatihanHuruf" />
         <action
             android:id="@+id/action_fragmentSoalLatihanVideos_to_fragmentHasilLatihanVideos"
-            app:destination="@id/fragmentHasilLatihanVideos" />
+            app:destination="@id/fragmentHasilLatihanVideos"
+            app:popUpTo="@id/fragmentSoalLatihanVideos"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/fragmentHasilLatihanVideos"
@@ -223,7 +230,9 @@
         tools:layout="@layout/fragment_hasil_latihan_videos" >
         <action
             android:id="@+id/action_fragmentHasilLatihanVideos_to_fragmentDetailLatihanHuruf"
-            app:destination="@id/fragmentDetailLatihanHuruf" />
+            app:destination="@id/fragmentDetailLatihanHuruf"
+            app:popUpTo="@id/fragmentHasilLatihanVideos"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/akunFragment"
@@ -280,5 +289,22 @@
         android:id="@+id/fragmentSoalLatihanAudio"
         android:name="com.test.qolami.view.latihan.FragmentSoalLatihanAudio"
         android:label="fragment_soal_latihan_audio"
-        tools:layout="@layout/fragment_soal_latihan_audio" />
+        tools:layout="@layout/fragment_soal_latihan_audio" >
+        <action
+            android:id="@+id/action_fragmentSoalLatihanAudio_to_fragmentHasilLatihanAudio"
+            app:destination="@id/fragmentHasilLatihanAudio"
+            app:popUpTo="@id/fragmentSoalLatihanAudio"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentHasilLatihanAudio"
+        android:name="com.test.qolami.view.latihan.FragmentHasilLatihanAudio"
+        android:label="fragment_hasil_latihan_audio"
+        tools:layout="@layout/fragment_hasil_latihan_audio" >
+        <action
+            android:id="@+id/action_fragmentHasilLatihanAudio_to_fragmentDetailLatihanHuruf"
+            app:destination="@id/fragmentDetailLatihanHuruf"
+            app:popUpTo="@id/fragmentHasilLatihanAudio"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>

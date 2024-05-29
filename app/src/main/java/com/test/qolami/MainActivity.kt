@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.ViewGroup
 import android.view.Window
 import android.view.WindowManager
 import androidx.activity.addCallback
@@ -19,6 +20,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.test.qolami.view.HomeFragment
 import com.test.qolami.view.account.PopUpAkunFragment
 import com.test.qolami.view.home.PopUpFragment
+import com.test.qolami.view.home.PopUpPelajaranFragment
 import com.test.qolami.view.latihan.FragmentLatihan
 import com.test.qolami.view.pelajaran.PelajaranFragment
 import dagger.hilt.android.AndroidEntryPoint
@@ -30,9 +32,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-
-        enableEdgeToEdge()
         supportActionBar?.hide()
         val navHostFragment =
             supportFragmentManager.findFragmentById(R.id.fragmentContainerView4) as NavHostFragment
@@ -47,6 +46,11 @@ class MainActivity : AppCompatActivity() {
                 }
                 else -> {
                     bottomNavView.visibility = View.GONE
+                }
+            }
+            when(destination.id){
+                R.id.pelajaranFragment -> {
+
                 }
             }
             updateBottomNavigationItem(destination.id)
@@ -64,6 +68,7 @@ class MainActivity : AppCompatActivity() {
                     true
                 }
                 R.id.latihan -> {
+                    val currentFragmentId = navController.currentBackStackEntry?.destination?.id
                     sharedPreferences = getSharedPreferences("LOGIN", Context.MODE_PRIVATE)
                     var token = sharedPreferences.getString("token", "")
                     Log.i("token", "$token")
@@ -71,9 +76,15 @@ class MainActivity : AppCompatActivity() {
                         navController.navigate(R.id.fragmentLatihan)
                         true
                     }else{
-                        val popUpFragment = PopUpAkunFragment()
-                        popUpFragment.show(getSupportFragmentManager(),"popupfragment")
-                        false
+                        if(currentFragmentId!! == R.id.homeFragment) {
+                            val popUpFragment = PopUpAkunFragment()
+                            popUpFragment.show(getSupportFragmentManager(), "popupfragment")
+                            false
+                        }else if(currentFragmentId!! == R.id.pelajaranFragment){
+                            val popUpFragment = PopUpPelajaranFragment()
+                            popUpFragment.show(getSupportFragmentManager(), "popupfragment")
+                            false
+                        }
                     }
                 }
                 else -> false

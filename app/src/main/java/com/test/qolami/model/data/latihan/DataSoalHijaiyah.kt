@@ -1,11 +1,11 @@
-package com.test.qolami.model.data.score
+package com.test.qolami.model.data.latihan
 
 
 import com.google.gson.annotations.SerializedName
 
-data class ScoreResponse(
+data class DataSoalHijaiyah(
     @SerializedName("data")
-    val `data`: Data,
+    val `data`: DataLatihanHijaiyahVideo,
     @SerializedName("message")
     val message: String,
     @SerializedName("status")

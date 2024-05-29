@@ -12,8 +12,6 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.test.qolami.R
 import com.test.qolami.databinding.FragmentHasilLatihanVideosBinding
-import com.test.qolami.model.data.score.Data
-import com.test.qolami.model.data.score.ScoreRequest
 import com.test.qolami.viewnodel.ScoreViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -37,10 +35,11 @@ class FragmentHasilLatihanVideos : Fragment() {
         sharedPreferences = requireContext().getSharedPreferences("LOGIN", Context.MODE_PRIVATE)
         val hasilBenarVideos = this.arguments!!.getInt("JumlahBenarVideos")
         val hasilSalahVideos = this.arguments!!.getInt("JumlahSalahVideos")
-        val title = this.arguments!!.getString("title")
-        val subtitle = this.arguments!!.getString("subtitle")
+        val title = this.arguments!!.getString("titleVideos")
+        val subtitle = this.arguments!!.getString("subtitleVideos")
         Log.i("benar", "$hasilBenarVideos")
         Log.i("salah", "$hasilSalahVideos")
+        Log.i("title", "$subtitle")
         binding.nilaiBenar.text = hasilBenarVideos.toString()
         binding.nilaiSalah.text = hasilSalahVideos.toString()
         binding.btnLanjutkan.setOnClickListener {
@@ -54,6 +53,11 @@ class FragmentHasilLatihanVideos : Fragment() {
                 val bundle = Bundle()
                 bundle.putString("judulLatihanVideos", title)
                 findNavController().navigate(R.id.action_fragmentHasilLatihanVideos_to_fragmentDetailLatihanHuruf, bundle)
+            }else if(subtitle == "Huruf Hijaiyah"){
+                postScoreHijaiyah()
+                val bundle = Bundle()
+                bundle.putString("judulLatihanVideos", title)
+                findNavController().navigate(R.id.action_fragmentHasilLatihanVideos_to_fragmentDetailLatihanHuruf, bundle)
             }else{
                 postScoreDhammah()
                 val bundle = Bundle()
@@ -64,21 +68,25 @@ class FragmentHasilLatihanVideos : Fragment() {
         }
 
     }
-
+    private fun postScoreHijaiyah(){
+        val id = sharedPreferences.getString("id", "")
+        val jumlahBenar = this.arguments!!.getInt("JumlahBenarVideos") * 10
+        scoreViewModel.patchScoreHijaiyahVideo(id!!, jumlahBenar)
+    }
     private fun postScoreFathah(){
         val id = sharedPreferences.getString("id", "")
         val jumlahBenar = this.arguments!!.getInt("JumlahBenarVideos") * 10
-        scoreViewModel.patchScore(id!!, Data(scoreFathah = ScoreRequest(scoreVideo = jumlahBenar)))
+        scoreViewModel.patchScoreFathahVideo(id!!, jumlahBenar)
     }
     private fun postScoreKasrah(){
         val id = sharedPreferences.getString("id", "")
         val jumlahBenar = this.arguments!!.getInt("JumlahBenarVideos") * 10
-        scoreViewModel.patchScore(id!!, Data(scoreKasrah = ScoreRequest(scoreVideo = jumlahBenar)))
+        scoreViewModel.patchScoreKasrahVideo(id!!, jumlahBenar)
     }
     private fun postScoreDhammah(){
         val id = sharedPreferences.getString("id", "")
         val jumlahBenar = this.arguments!!.getInt("JumlahBenarVideos") *10
-        scoreViewModel.patchScore(id!!, Data(scoreDhammah = ScoreRequest(scoreVideo = jumlahBenar)))
+        scoreViewModel.patchScoreDhammahVideo(id!!, jumlahBenar)
     }
 
 

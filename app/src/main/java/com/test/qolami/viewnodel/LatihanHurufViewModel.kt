@@ -35,8 +35,8 @@ class LatihanHurufViewModel @Inject constructor(private val Client: RestfulApi) 
         getDataHuruf.value = listData
     }
 
-    private var liveDataSoalImage: MutableLiveData<DataXX> = MutableLiveData()
-    val dataSoalImage: LiveData<DataXX> get() = liveDataSoalImage
+    private var liveDataSoalImage: MutableLiveData<DataLatihanHijaiyah> = MutableLiveData()
+    val dataSoalImage: LiveData<DataLatihanHijaiyah> get() = liveDataSoalImage
     fun getSoal() {
         Client.getSoalImage().enqueue(object : Callback<BankSoalImageResponse> {
             override fun onResponse(call: Call<BankSoalImageResponse>, response: Response<BankSoalImageResponse>) {
@@ -55,8 +55,8 @@ class LatihanHurufViewModel @Inject constructor(private val Client: RestfulApi) 
 
         })
     }
-    private var liveDataSoalImageFathah: MutableLiveData<DataXX> = MutableLiveData()
-    val dataSoalImageFathah: LiveData<DataXX> get() = liveDataSoalImageFathah
+    private var liveDataSoalImageFathah: MutableLiveData<DataLatihanHijaiyah> = MutableLiveData()
+    val dataSoalImageFathah: LiveData<DataLatihanHijaiyah> get() = liveDataSoalImageFathah
     fun getSoalFathah() {
         Client.getSoalImageFathah().enqueue(object : Callback<BankSoalImageResponse> {
             override fun onResponse(call: Call<BankSoalImageResponse>, response: Response<BankSoalImageResponse>) {
@@ -75,8 +75,8 @@ class LatihanHurufViewModel @Inject constructor(private val Client: RestfulApi) 
 
         })
     }
-    private var liveDataSoalImageKasrah: MutableLiveData<DataXX> = MutableLiveData()
-    val dataSoalImageKasrah: LiveData<DataXX> get() = liveDataSoalImageKasrah
+    private var liveDataSoalImageKasrah: MutableLiveData<DataLatihanHijaiyah> = MutableLiveData()
+    val dataSoalImageKasrah: LiveData<DataLatihanHijaiyah> get() = liveDataSoalImageKasrah
     fun getSoalKasrah() {
         Client.getSoalImageKasrah().enqueue(object : Callback<BankSoalImageResponse> {
             override fun onResponse(call: Call<BankSoalImageResponse>, response: Response<BankSoalImageResponse>) {
@@ -96,8 +96,8 @@ class LatihanHurufViewModel @Inject constructor(private val Client: RestfulApi) 
 
         })
     }
-    private var liveDataSoalImageDhammah: MutableLiveData<DataXX> = MutableLiveData()
-    val dataSoalImageDhammah: LiveData<DataXX> get() = liveDataSoalImageDhammah
+    private var liveDataSoalImageDhammah: MutableLiveData<DataLatihanHijaiyah> = MutableLiveData()
+    val dataSoalImageDhammah: LiveData<DataLatihanHijaiyah> get() = liveDataSoalImageDhammah
     fun getSoalDhammah() {
         Client.getSoalImageDhammah().enqueue(object : Callback<BankSoalImageResponse> {
             override fun onResponse(call: Call<BankSoalImageResponse>, response: Response<BankSoalImageResponse>) {
@@ -116,8 +116,28 @@ class LatihanHurufViewModel @Inject constructor(private val Client: RestfulApi) 
 
         })
     }
-    private var liveDataSoalVideosFathah: MutableLiveData<Data> = MutableLiveData()
-    val dataSoalVideosFathah: LiveData<Data> get() = liveDataSoalVideosFathah
+    private var liveDataSoalVideosHijaiyah: MutableLiveData<DataLatihanHijaiyahVideo> = MutableLiveData()
+    val dataSoalVideosHijaiyah: LiveData<DataLatihanHijaiyahVideo> get() = liveDataSoalVideosHijaiyah
+    fun getSoalVideoHijaiyah() {
+        Client.getSoalVideosHijaiyah().enqueue(object : Callback<DataSoalHijaiyah> {
+            override fun onResponse(call: Call<DataSoalHijaiyah>, response: Response<DataSoalHijaiyah>) {
+                if (response.isSuccessful) {
+                    liveDataSoalVideosHijaiyah.postValue(response.body()!!.data)
+
+                } else {
+                    liveDataSoalVideosHijaiyah.postValue(null)
+                    Log.e("Error", "onFailure: Error")
+                }
+            }
+
+            override fun onFailure(call: Call<DataSoalHijaiyah>, t: Throwable) {
+                Log.e("Error: ", "onFailure : ${t.message}")
+            }
+
+        })
+    }
+    private var liveDataSoalVideosFathah: MutableLiveData<DataLatihanFathahVideos> = MutableLiveData()
+    val dataSoalVideosFathah: LiveData<DataLatihanFathahVideos> get() = liveDataSoalVideosFathah
     fun getSoalVideoFathah() {
         Client.getSoalVideosFathah().enqueue(object : Callback<BankSoalVideoResponse> {
             override fun onResponse(call: Call<BankSoalVideoResponse>, response: Response<BankSoalVideoResponse>) {
@@ -136,8 +156,8 @@ class LatihanHurufViewModel @Inject constructor(private val Client: RestfulApi) 
 
         })
     }
-    private var liveDataSoalVideosKasrah: MutableLiveData<DataX> = MutableLiveData()
-    val dataSoalVideosKasrah: LiveData<DataX> get() = liveDataSoalVideosKasrah
+    private var liveDataSoalVideosKasrah: MutableLiveData<DataLatihanKasrahVideo> = MutableLiveData()
+    val dataSoalVideosKasrah: LiveData<DataLatihanKasrahVideo> get() = liveDataSoalVideosKasrah
     fun getSoalVideoKasrah() {
         Client.getSoalVideosKasrah().enqueue(object : Callback<DataSoalKasrah> {
             override fun onResponse(call: Call<DataSoalKasrah>, response: Response<DataSoalKasrah>) {
@@ -156,8 +176,8 @@ class LatihanHurufViewModel @Inject constructor(private val Client: RestfulApi) 
 
         })
     }
-    private var liveDataSoalVideosDhammah: MutableLiveData<DataXXX> = MutableLiveData()
-    val dataSoalVideosDhammah: LiveData<DataXXX> get() = liveDataSoalVideosDhammah
+    private var liveDataSoalVideosDhammah: MutableLiveData<DataLatihanDhammahVideo> = MutableLiveData()
+    val dataSoalVideosDhammah: LiveData<DataLatihanDhammahVideo> get() = liveDataSoalVideosDhammah
     fun getSoalVideoDhammah() {
         Client.getSoalVideosDhammah().enqueue(object : Callback<DataSoalDhammah> {
             override fun onResponse(call: Call<DataSoalDhammah>, response: Response<DataSoalDhammah>) {
@@ -176,8 +196,8 @@ class LatihanHurufViewModel @Inject constructor(private val Client: RestfulApi) 
 
         })
     }
-    private var liveDataSoalAudioHijaiyah: MutableLiveData<DataXXXX> = MutableLiveData()
-    val dataSoalAudioHijaiyah: LiveData<DataXXXX> get() = liveDataSoalAudioHijaiyah
+    private var liveDataSoalAudioHijaiyah: MutableLiveData<DataLatihanHijaiyahAudio> = MutableLiveData()
+    val dataSoalAudioHijaiyah: LiveData<DataLatihanHijaiyahAudio> get() = liveDataSoalAudioHijaiyah
     fun getSoalAudiHijaiyah() {
         Client.getSoalAudioHijaiyah().enqueue(object : Callback<BankSoalAudioResponse> {
             override fun onResponse(call: Call<BankSoalAudioResponse>, response: Response<BankSoalAudioResponse>) {
@@ -191,6 +211,66 @@ class LatihanHurufViewModel @Inject constructor(private val Client: RestfulApi) 
             }
 
             override fun onFailure(call: Call<BankSoalAudioResponse>, t: Throwable) {
+                Log.e("Error: ", "onFailure : ${t.message}")
+            }
+
+        })
+    }
+    private var liveDataSoalAudioFathah: MutableLiveData<DataLatihanFathahAudio> = MutableLiveData()
+    val dataSoalAudioFathah: LiveData<DataLatihanFathahAudio> get() = liveDataSoalAudioFathah
+    fun getSoalAudioFathah() {
+        Client.getSoalAudioFathah().enqueue(object : Callback<BankSoalAudioFathahResponse> {
+            override fun onResponse(call: Call<BankSoalAudioFathahResponse>, response: Response<BankSoalAudioFathahResponse>) {
+                if (response.isSuccessful) {
+                    liveDataSoalAudioFathah.postValue(response.body()!!.data)
+
+                } else {
+                    liveDataSoalAudioFathah.postValue(null)
+                    Log.e("Error", "onFailure: Error")
+                }
+            }
+
+            override fun onFailure(call: Call<BankSoalAudioFathahResponse>, t: Throwable) {
+                Log.e("Error: ", "onFailure : ${t.message}")
+            }
+
+        })
+    }
+    private var liveDataSoalAudioKasrah: MutableLiveData<DataLatihanKasrahAudio> = MutableLiveData()
+    val dataSoalAudioKasrah: LiveData<DataLatihanKasrahAudio> get() = liveDataSoalAudioKasrah
+    fun getSoalAudioKasrah() {
+        Client.getSoalAudioKasrah().enqueue(object : Callback<BankSoalAudioKasrahResponse> {
+            override fun onResponse(call: Call<BankSoalAudioKasrahResponse>, response: Response<BankSoalAudioKasrahResponse>) {
+                if (response.isSuccessful) {
+                    liveDataSoalAudioKasrah.postValue(response.body()!!.data)
+
+                } else {
+                    liveDataSoalAudioKasrah.postValue(null)
+                    Log.e("Error", "onFailure: Error")
+                }
+            }
+
+            override fun onFailure(call: Call<BankSoalAudioKasrahResponse>, t: Throwable) {
+                Log.e("Error: ", "onFailure : ${t.message}")
+            }
+
+        })
+    }
+    private var liveDataSoalAudioDhammah: MutableLiveData<DataLatihanDhammahAudio> = MutableLiveData()
+    val dataSoalAudioDhammah: LiveData<DataLatihanDhammahAudio> get() = liveDataSoalAudioDhammah
+    fun getSoalAudioDhammah() {
+        Client.getSoalAudioDhammah().enqueue(object : Callback<BankSoalAudioDhammahResponse> {
+            override fun onResponse(call: Call<BankSoalAudioDhammahResponse>, response: Response<BankSoalAudioDhammahResponse>) {
+                if (response.isSuccessful) {
+                    liveDataSoalAudioDhammah.postValue(response.body()!!.data)
+
+                } else {
+                    liveDataSoalAudioDhammah.postValue(null)
+                    Log.e("Error", "onFailure: Error")
+                }
+            }
+
+            override fun onFailure(call: Call<BankSoalAudioDhammahResponse>, t: Throwable) {
                 Log.e("Error: ", "onFailure : ${t.message}")
             }
 
