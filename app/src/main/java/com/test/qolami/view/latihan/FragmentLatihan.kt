@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.test.qolami.R
 import com.test.qolami.databinding.FragmentLatihanBinding
+import com.test.qolami.view.home.PopUpFiturSedangDikembankanFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -29,6 +30,14 @@ class FragmentLatihan : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.btnHuruf.setOnClickListener {
         findNavController().navigate(R.id.action_fragmentLatihan_to_fragmentLatihanHuruf)
+        }
+        binding.btnKata.setOnClickListener {
+            val popUpFiturFragment = PopUpFiturSedangDikembankanFragment()
+            popUpFiturFragment.show(childFragmentManager, "popupfitur")
+        }
+        binding.btnHuruf.setOnClickListener {
+            val popUpFiturFragment = PopUpFiturSedangDikembankanFragment()
+            popUpFiturFragment.show(childFragmentManager, "popupfitur")
         }
     }
 

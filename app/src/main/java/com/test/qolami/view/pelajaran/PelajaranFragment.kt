@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.test.qolami.R
 import com.test.qolami.databinding.FragmentPelajaranBinding
+import com.test.qolami.view.home.PopUpFiturSedangDikembankanFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -30,6 +31,14 @@ class PelajaranFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.btnHuruf.setOnClickListener {
             findNavController().navigate(R.id.action_pelajaranFragment_to_pelajaranHurufFragment)
+        }
+        binding.btnKata.setOnClickListener {
+            val popUpFiturFragment = PopUpFiturSedangDikembankanFragment()
+            popUpFiturFragment.show(childFragmentManager, "popupfitur")
+        }
+        binding.btnRangkaian.setOnClickListener {
+            val popUpFiturFragment = PopUpFiturSedangDikembankanFragment()
+            popUpFiturFragment.show(childFragmentManager, "popupfitur")
         }
 
     }

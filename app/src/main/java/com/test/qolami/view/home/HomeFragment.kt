@@ -13,6 +13,7 @@ import androidx.navigation.fragment.findNavController
 import com.test.qolami.R
 import com.test.qolami.databinding.FragmentHomeBinding
 import com.test.qolami.view.account.PopUpAkunFragment
+import com.test.qolami.view.home.PopUpFiturSedangDikembankanFragment
 import com.test.qolami.view.home.PopUpFragment
 import com.test.qolami.viewnodel.UserViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -49,11 +50,14 @@ class HomeFragment : Fragment() {
         binding.imageView.setOnClickListener {
             if (getToken.isEmpty()) {
                 val popUpAkun = PopUpAkunFragment()
-                popUpAkun.isCancelable = false
                 popUpAkun.show(childFragmentManager,"popupakun")
             }else {
                 findNavController().navigate(R.id.action_homeFragment_to_akunFragment)
             }
+        }
+        binding.buttonQuiz.setOnClickListener {
+            val popUpFiturFragment = PopUpFiturSedangDikembankanFragment()
+            popUpFiturFragment.show(childFragmentManager, "popupfitur")
         }
     }
     private fun checkSudahLogin(){

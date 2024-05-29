@@ -19,6 +19,7 @@ import androidx.navigation.ui.NavigationUI
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.test.qolami.view.HomeFragment
 import com.test.qolami.view.account.PopUpAkunFragment
+import com.test.qolami.view.home.PopUpFiturSedangDikembankanFragment
 import com.test.qolami.view.home.PopUpFragment
 import com.test.qolami.view.home.PopUpPelajaranFragment
 import com.test.qolami.view.latihan.FragmentLatihan
@@ -48,11 +49,7 @@ class MainActivity : AppCompatActivity() {
                     bottomNavView.visibility = View.GONE
                 }
             }
-            when(destination.id){
-                R.id.pelajaranFragment -> {
 
-                }
-            }
             updateBottomNavigationItem(destination.id)
         }
         navController.currentDestination
@@ -86,6 +83,10 @@ class MainActivity : AppCompatActivity() {
                             false
                         }
                     }
+                }
+                R.id.Quiz -> {
+                    val popUpFiturFragment = PopUpFiturSedangDikembankanFragment()
+                    popUpFiturFragment.show(getSupportFragmentManager(), "popupfitur")
                 }
                 else -> false
             }
