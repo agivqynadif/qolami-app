@@ -60,7 +60,7 @@ class OnBoardingMangerFragment : Fragment() {
             }
         }
         binding.txtMasuk.setOnClickListener {
-            findNavController().navigate(R.id.action_onBoardingMangerFragment_to_homeFragment)
+            findNavController().navigate(R.id.action_onBoardingMangerFragment_to_loginFragment)
         }
     }
     private fun finishedOnboarding(){
