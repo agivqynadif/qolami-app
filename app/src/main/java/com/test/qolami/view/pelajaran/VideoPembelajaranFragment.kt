@@ -45,9 +45,6 @@ class VideoPembelajaranFragment : Fragment() {
         val getJudul = this.arguments?.get("judul")
         binding.textPelajaran.text = getJudul.toString()
         when (binding.textPelajaran.text.toString()) {
-            "Pelajaran 1" -> {
-                return ytPlayer1()
-            }
             "Pelajaran 2" -> {
                 return ytPlayer2()
             }
@@ -60,37 +57,7 @@ class VideoPembelajaranFragment : Fragment() {
         }
 
     }
-    private fun ytPlayer1(){
-        val getId1 = this.arguments?.get("id1")
-        val data1 = pelajaranHurufViewModel.hurufListHijaiyah
-        for(i in data1.indices) {
-            var getDataId2 = data1[i].id
-            if(getDataId2 == getId1){
-                binding.textJudul.text = data1[i].pelajaran
-                youTubePlayerView.addYouTubePlayerListener(object : AbstractYouTubePlayerListener(){
-                    override fun onReady(player: YouTubePlayer) {
-                        youTubePlayer = player
-                        player.cueVideo(data1[i].idYoutube, 0f)
-                    }
 
-                    override fun onStateChange(
-                        youTubePlayer: YouTubePlayer,
-                        state: PlayerConstants.PlayerState
-                    ) {
-                        if (state == PlayerConstants.PlayerState.ENDED)
-                            binding.btnPly.visibility= View.VISIBLE
-                    }
-                })
-                binding.btnPly.setOnClickListener {
-                    youTubePlayer?.play()
-                    binding.btnPly.visibility = View.INVISIBLE
-                }
-                binding.textPenjelasan.text = "Perhatikan Tulisan \nberikut!"
-                binding.detail.text = data1[i].detail
-                Glide.with(this).load(data1[i].gambar).into(binding.gambarPelajaran)
-            }
-        }
-    }
     private fun ytPlayer2(){
         val getId2 = this.arguments?.get("id2")
         val data2 = pelajaranHurufViewModel.hurufListFathah

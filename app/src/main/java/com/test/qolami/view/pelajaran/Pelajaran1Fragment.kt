@@ -13,6 +13,7 @@ import com.test.qolami.view.adapter.pelajaran.PelajaranHuruf1Adapter
 import com.test.qolami.view.adapter.pelajaran.PelajaranHuruf2Adapter
 import com.test.qolami.view.adapter.pelajaran.PelajaranHuruf3Adapter
 import com.test.qolami.view.adapter.pelajaran.PelajaranHuruf4Adapter
+import com.test.qolami.view.pelajaran.data.DataAudioHijaiyaj
 import com.test.qolami.view.pelajaran.data.DataMenuPelajaran1Huruf
 import com.test.qolami.viewnodel.PelajaranHurufViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -63,11 +64,11 @@ class Pelajaran1Fragment : Fragment() {
     private fun rcLayoutHurufPelajaran1(){
         pelajaranHurufViewModel = ViewModelProvider(this)[PelajaranHurufViewModel::class.java]
         pelajaranHuruf1Adapter = PelajaranHuruf1Adapter(ArrayList())
-        pelajaranHurufViewModel.getPelajaran1()
+        pelajaranHurufViewModel.getAudioPelajaran1()
         binding.rcCon.layoutManager = GridLayoutManager(context, 5)
         binding.rcCon.adapter = pelajaranHuruf1Adapter
-        pelajaranHurufViewModel.getDataPelajaran1.observe(viewLifecycleOwner) {
-            pelajaranHuruf1Adapter.listHurufHijaiyah = it as ArrayList<DataMenuPelajaran1Huruf>
+        pelajaranHurufViewModel.getDataAudPelajaran1.observe(viewLifecycleOwner) {
+            pelajaranHuruf1Adapter.listHurufHijaiyah = it as ArrayList<DataAudioHijaiyaj>
         }
     }
     private fun rcLayoutHurufPelajaran2(){

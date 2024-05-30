@@ -3,10 +3,7 @@ package com.test.qolami.viewnodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.test.qolami.R
-import com.test.qolami.view.pelajaran.data.DataMenuPelajaran1Huruf
-import com.test.qolami.view.pelajaran.data.DataPelajaranHuruf
-import com.test.qolami.view.pelajaran.data.DataPelajaranHurufDetail
-import com.test.qolami.view.pelajaran.data.DataVidPelajaranHuruf
+import com.test.qolami.view.pelajaran.data.*
 
 class PelajaranHurufViewModel:ViewModel() {
     val listData = arrayListOf(
@@ -39,42 +36,8 @@ class PelajaranHurufViewModel:ViewModel() {
     fun getDataDetail(){
         getDataHurufDetail.value = listDataPelajaranDetail
     }
-    val listDataMenuPelajaran1 = arrayListOf(
-        DataMenuPelajaran1Huruf(1, R.drawable.h_alif),
-        DataMenuPelajaran1Huruf(2, R.drawable.h_ba),
-        DataMenuPelajaran1Huruf(3, R.drawable.h_ta),
-        DataMenuPelajaran1Huruf(4, R.drawable.h_sa),
-        DataMenuPelajaran1Huruf(5, R.drawable.h_jim),
-        DataMenuPelajaran1Huruf(6, R.drawable.h_kha),
-        DataMenuPelajaran1Huruf(7, R.drawable.h_kho),
-        DataMenuPelajaran1Huruf(8, R.drawable.h_dal),
-        DataMenuPelajaran1Huruf(9, R.drawable.h_dzal),
-        DataMenuPelajaran1Huruf(10, R.drawable.h_ra),
-        DataMenuPelajaran1Huruf(11, R.drawable.h_za),
-        DataMenuPelajaran1Huruf(12, R.drawable.h_sin),
-        DataMenuPelajaran1Huruf(13, R.drawable.h_syin),
-        DataMenuPelajaran1Huruf(14, R.drawable.h_shod),
-        DataMenuPelajaran1Huruf(15, R.drawable.h_dzo),
-        DataMenuPelajaran1Huruf(16, R.drawable.h_tho),
-        DataMenuPelajaran1Huruf(17, R.drawable.h_tzo),
-        DataMenuPelajaran1Huruf(18, R.drawable.h_ain),
-        DataMenuPelajaran1Huruf(19, R.drawable.h_goin),
-        DataMenuPelajaran1Huruf(20, R.drawable.h_fa),
-        DataMenuPelajaran1Huruf(21, R.drawable.h_kof),
-        DataMenuPelajaran1Huruf(22, R.drawable.h_kaf),
-        DataMenuPelajaran1Huruf(23, R.drawable.h_lam),
-        DataMenuPelajaran1Huruf(24, R.drawable.h_mim),
-        DataMenuPelajaran1Huruf(25, R.drawable.h_nun),
-        DataMenuPelajaran1Huruf(26, R.drawable.h_waw),
-        DataMenuPelajaran1Huruf(27, R.drawable.h_ha),
-        DataMenuPelajaran1Huruf(28, R.drawable.h_lamalif),
-        DataMenuPelajaran1Huruf(29, R.drawable.h_hamzah),
-        DataMenuPelajaran1Huruf(30, R.drawable.h_ya)
-    )
-    val getDataPelajaran1:MutableLiveData<List<DataMenuPelajaran1Huruf>> = MutableLiveData()
-    fun getPelajaran1(){
-        getDataPelajaran1.value = listDataMenuPelajaran1
-    }
+
+
     val listDataMenuPelajaran2 = arrayListOf(
         DataMenuPelajaran1Huruf(1, R.drawable.hfp_alif_fathah_putih),
         DataMenuPelajaran1Huruf(2, R.drawable.hfp_ba_fathah_putih),
@@ -177,41 +140,41 @@ class PelajaranHurufViewModel:ViewModel() {
     fun getPelajaran4 (){
         getDataPelajaran4.value = listDataMenuPelajaran4
     }
-    val hurufListHijaiyah: List<DataVidPelajaranHuruf> = listOf(
-        DataVidPelajaranHuruf(1, R.drawable.alif_hitam,"Alif","RYuluGUGC0k", "Warna Hitam merupakan \n huruf Alif"),
-        DataVidPelajaranHuruf(2, R.drawable.ba_hitam,"Ba’","Ur8Tsi6X1D4", "Warna Hitam merupakan \n huruf Ba’"),
-        DataVidPelajaranHuruf(3, R.drawable.ta_hitam, "Ta’","qRXZugP-N6s", "Warna Hitam merupakan \n huruf Ta’"),
-        DataVidPelajaranHuruf(4, R.drawable.tsa_hitam,  "Tsa’","N4nMppF7X4M", "Warna Hitam merupakan \n huruf Tsa’"),
-        DataVidPelajaranHuruf(5, R.drawable.jim_hitam,"Jim","-u3lQIbG3yQ", "Warna Hitam merupakan \n huruf Jim"),
-        DataVidPelajaranHuruf(6, R.drawable.ha_hitam,  "Ha’" ,"qrEtwm7HUPg", "Warna Hitam merupakan \n huruf Ha’"),
-        DataVidPelajaranHuruf(7, R.drawable.kho_hitam, "Kha’","T1ITcdA97F0", "Warna Hitam merupakan \n huruf Kha’"),
-        DataVidPelajaranHuruf(8, R.drawable.dal_hitam, "Dal","M8c_Z2Wc3w4", "Warna Hitam merupakan \n huruf Dal"),
-        DataVidPelajaranHuruf(9, R.drawable.dza_hitam, "Dzal","M9qUXVJm2u8", "Warna Hitam merupakan \n huruf Dzal"),
-        DataVidPelajaranHuruf(10, R.drawable.ra_hitam,  "Ra’","FHF6vMRMKUA", "Warna Hitam merupakan \n huruf Ra’"),
-        DataVidPelajaranHuruf(11, R.drawable.zai_hitam,  "Za’","xWLHj-d6ajk", "Warna Hitam merupakan \n huruf Za’"),
-        DataVidPelajaranHuruf(12, R.drawable.sin_hitam, "Sin","Wi5yZZkjjaY", "Warna Hitam merupakan \n huruf Sin"),
-        DataVidPelajaranHuruf(13, R.drawable.syin_hitam, "Syin","DI45zSgFR5k", "Warna Hitam merupakan \n huruf Syin"),
-        DataVidPelajaranHuruf(14, R.drawable.shot_hitam, "Shad","d6Ua_O4ChQc", "Warna Hitam merupakan \n huruf Shad"),
-        DataVidPelajaranHuruf(15, R.drawable.dzo_hitam ,"Dhad","UVniCAXvM3M", "Warna Hitam merupakan \n huruf Dhad"),
-        DataVidPelajaranHuruf(16, R.drawable.tho_hitam, "Tha’","0OzsoPNOcCs", "Warna Hitam merupakan \n huruf Tha’"),
-        DataVidPelajaranHuruf(17, R.drawable.dho_hitam,"Zha’","QRGE_xlR30A", "Warna Hitam merupakan \n huruf Zha’"),
-        DataVidPelajaranHuruf(18, R.drawable.ain_hitam ,"‘Ain","JSvFXTJAHtI", "Warna Hitam merupakan \n huruf ‘Ain"),
-        DataVidPelajaranHuruf(19, R.drawable.ghoin_hitam,"Ghain","8k_aayVGM5o", "Warna Hitam merupakan \n huruf Ghain"),
-        DataVidPelajaranHuruf(20, R.drawable.fa_hitam,"Fa’","BNsLA4r483U", "Warna Hitam merupakan \n huruf Fa’"),
-        DataVidPelajaranHuruf(21, R.drawable.kof_hitam,"Qaf","Bq5CaSj8kp8", "Warna Hitam merupakan \n huruf Qaf"),
-        DataVidPelajaranHuruf(22, R.drawable.kaf_hitam,"Kaf","hD5Tbbm477I", "Warna Hitam merupakan \n huruf Kaf"),
-        DataVidPelajaranHuruf(23, R.drawable.lam_hitam,"Lam","epaj-x3A0Kg", "Warna Hitam merupakan \n huruf Lam"),
-        DataVidPelajaranHuruf(24, R.drawable.mim_hitam,"Mim","frgOwkuKILc", "Warna Hitam merupakan \n huruf Mim"),
-        DataVidPelajaranHuruf(25, R.drawable.nun_hitam,"Nun","WwCMG9HTV6E", "Warna Hitam merupakan \n huruf Nun"),
-        DataVidPelajaranHuruf(26, R.drawable.waw_hitam,"Waw","2zdsQ_wgZjE", "Warna Hitam merupakan \n huruf Waw"),
-        DataVidPelajaranHuruf(27, R.drawable.kha_hitam,"Ha’","99Fm2d3zQKY", "Warna Hitam merupakan \n huruf Ha’"),
-        DataVidPelajaranHuruf(28, R.drawable.lamalif_hitam,"Lam-Alif","Lc2hObfqfTo", "Warna Hitam merupakan \n huruf Ya’"),
-        DataVidPelajaranHuruf(28, R.drawable.hamzah_hitam,"Hamzah","bd2JsB6Rzvw", "Warna Hitam merupakan \n huruf Ya’"),
-        DataVidPelajaranHuruf(28, R.drawable.ya_hitam,"Ya’","sEUF-6Ek1W0", "Warna Hitam merupakan \n huruf Ya’")
+    val hurufListHijaiyah = arrayListOf (
+        DataAudioHijaiyaj(1, R.drawable.h_alif,    R.raw.sound1),
+        DataAudioHijaiyaj(2, R.drawable.h_ba,      R.raw.sound2),
+        DataAudioHijaiyaj(3, R.drawable.h_ta,      R.raw.sound3),
+        DataAudioHijaiyaj(4, R.drawable.h_sa,      R.raw.sound4),
+        DataAudioHijaiyaj(5, R.drawable.h_jim,     R.raw.sound5),
+        DataAudioHijaiyaj(6, R.drawable.h_kha,     R.raw.sound6),
+        DataAudioHijaiyaj(7, R.drawable.h_kho,     R.raw.sound7),
+        DataAudioHijaiyaj(8, R.drawable.h_dal,     R.raw.sound8),
+        DataAudioHijaiyaj(9, R.drawable.h_dzal,    R.raw.sound9),
+        DataAudioHijaiyaj(10, R.drawable.h_ra,     R.raw.sound10),
+        DataAudioHijaiyaj(11, R.drawable.h_za,     R.raw.sound11),
+        DataAudioHijaiyaj(12, R.drawable.h_sin,    R.raw.sound12),
+        DataAudioHijaiyaj(13, R.drawable.h_syin,   R.raw.sound13),
+        DataAudioHijaiyaj(14, R.drawable.h_shod,   R.raw.sound14),
+        DataAudioHijaiyaj(15, R.drawable.h_dzo,    R.raw.sound15),
+        DataAudioHijaiyaj(16, R.drawable.h_tho,    R.raw.sound16),
+        DataAudioHijaiyaj(17, R.drawable.h_tzo,    R.raw.sound17),
+        DataAudioHijaiyaj(18, R.drawable.h_ain,    R.raw.sound18),
+        DataAudioHijaiyaj(19, R.drawable.h_goin,   R.raw.sound19),
+        DataAudioHijaiyaj(20, R.drawable.h_fa,     R.raw.sound20),
+        DataAudioHijaiyaj(21, R.drawable.h_kof,    R.raw.sound21),
+        DataAudioHijaiyaj(22, R.drawable.h_kaf,    R.raw.sound22),
+        DataAudioHijaiyaj(23, R.drawable.h_lam,    R.raw.sound23),
+        DataAudioHijaiyaj(24, R.drawable.h_mim,    R.raw.sound24),
+        DataAudioHijaiyaj(25, R.drawable.h_nun,    R.raw.sound25),
+        DataAudioHijaiyaj(26, R.drawable.h_waw,    R.raw.sound26),
+        DataAudioHijaiyaj(27, R.drawable.h_ha,     R.raw.sound27),
+        DataAudioHijaiyaj(28, R.drawable.h_lamalif,R.raw.sound28),
+        DataAudioHijaiyaj(29, R.drawable.h_hamzah, R.raw.sound29),
+        DataAudioHijaiyaj(30, R.drawable.h_ya,      R.raw.sound30)
     )
-    val getDataVidPelajaran1 : MutableLiveData<List<DataVidPelajaranHuruf>> = MutableLiveData()
-    fun getVidPelajaran1 (){
-        getDataVidPelajaran1.value = hurufListHijaiyah
+    val getDataAudPelajaran1 : MutableLiveData<List<DataAudioHijaiyaj>> = MutableLiveData()
+    fun getAudioPelajaran1 (){
+        getDataAudPelajaran1.value = hurufListHijaiyah
     }
     val hurufListFathah: List<DataVidPelajaranHuruf> = listOf(
         DataVidPelajaranHuruf(1,R.drawable.alif_fathah_biru_muda,"Alif Berharakat Fathah","ntD81WB132A", "Warna Hitam merupakan \n huruf Alif dan yang berwarna \n biru terang adalah \n harakat Fathah."),
