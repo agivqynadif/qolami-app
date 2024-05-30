@@ -214,7 +214,7 @@ class ScoreViewModel@Inject constructor(private val Client: RestfulApi) : ViewMo
     }
     private var liveDataScoreDhammahVideo: MutableLiveData<ScoreX> = MutableLiveData()
     fun patchScoreDhammahVideo(userId: String, score: Int) {
-        Client.patchScoreDhammahAudio(userId, score).enqueue(object : Callback<PatchScoreResponse> {
+        Client.patchScoreDhammahVideo(userId, score).enqueue(object : Callback<PatchScoreResponse> {
             override fun onResponse(call: Call<PatchScoreResponse>, response: Response<PatchScoreResponse>) {
                 if (response.isSuccessful) {
                     liveDataScoreDhammahVideo.postValue(response.body()!!.data.score)

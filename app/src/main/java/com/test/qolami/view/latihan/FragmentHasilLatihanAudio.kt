@@ -57,7 +57,7 @@ class FragmentHasilLatihanAudio : Fragment() {
                 val bundle = Bundle()
                 bundle.putString("judulLatihanAudio", title)
                 findNavController().navigate(R.id.action_fragmentHasilLatihanAudio_to_fragmentDetailLatihanHuruf, bundle)
-            }else{
+            }else if(subtitle == "Huruf Berharakat Dhammah"){
                 postScoreDhammah()
                 val bundle = Bundle()
                 bundle.putString("judulLatihanAudio", title)

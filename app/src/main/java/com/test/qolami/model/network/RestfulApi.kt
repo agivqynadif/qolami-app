@@ -78,7 +78,7 @@ interface RestfulApi {
     @PATCH("user/score/{userId}")
     fun patchScoreFathahImage(
         @Path ("userId") userId: String,
-        @Field("scoreHijaiyahImage") scoreHijaiyahImage:Int
+        @Field("scoreFathahImage") scoreHijaiyahImage:Int
     ):Call<PatchScoreResponse>
     @FormUrlEncoded
     @PATCH("user/score/{userId}")

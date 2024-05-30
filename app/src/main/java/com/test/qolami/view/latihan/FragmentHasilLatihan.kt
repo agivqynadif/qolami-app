@@ -59,10 +59,11 @@ class FragmentHasilLatihan : Fragment() {
                 bundle.putString("judulLatihan", title)
                 Log.i("score", "${postScoreDhammah()}")
                 findNavController().navigate(R.id.action_fragmentHasilLatihan_to_fragmentDetailLatihanHuruf,bundle)
-            }else{
+            }else if(subJudul == "Huruf Berharakat Fathah"){
                 postScoreFathah()
                 val bundle = Bundle()
                 bundle.putString("judulLatihan", title)
+                Log.i("score", "${postScoreFathah()}")
                 findNavController().navigate(R.id.action_fragmentHasilLatihan_to_fragmentDetailLatihanHuruf, bundle)
             }
 
