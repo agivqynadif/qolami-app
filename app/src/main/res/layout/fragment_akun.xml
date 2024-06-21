@@ -81,7 +81,7 @@
                     android:textColor="@color/black"
                     android:layout_marginStart="16dp"
                     android:fontFamily="@font/montserrat_regular"
-                    android:text="my profile"
+                    android:text="My profile"
                     android:textSize="16sp" />
             </LinearLayout>
 
@@ -199,7 +199,7 @@
                     android:layout_marginStart="16dp"
                     android:textColor="@color/black"
                     android:fontFamily="@font/montserrat_regular"
-                    android:text="logout"
+                    android:text="Logout"
                     android:textSize="16sp" />
             </LinearLayout>
 

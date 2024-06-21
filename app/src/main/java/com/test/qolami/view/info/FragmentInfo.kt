@@ -1,5 +1,7 @@
 package com.test.qolami.view.info
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -29,6 +31,16 @@ class FragmentInfo : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.imageBack.setOnClickListener {
             findNavController().navigateUp()
+        }
+        binding.ivTiktok.setOnClickListener{
+            val ttLink = "https://www.tiktok.com/@metode_qolami?_t=8kmdKPWd0GC&_r=1"
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(ttLink))
+            startActivity(intent)
+        }
+        binding.ivYoutube.setOnClickListener {
+            val ytLink = "https://www.youtube.com/@qolamichanel9019"
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(ytLink))
+            startActivity(intent)
         }
     }
 
